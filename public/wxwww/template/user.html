@@ -1,0 +1,167 @@
+<div class="header_line"></div>
+
+<div class="remind_editor">
+    <ul>
+        <li>
+            <div class="tit">{{'weixin'|translate}}</div>
+            <a class="bangd" ng-click="wxlogin()" ng-show="data.weixin" style="background:none;">
+                {{data.weixin}} <i class="iconfont icof1">&#xe620;</i>
+            </a>
+            <a class="bangd" ng-click="wxlogin()" ng-show="!data.weixin" style="background:none;">
+                {{'binding'|translate}} <i class="iconfont icof1">&#xe620;</i>
+            </a>
+        </li>
+        <li>
+            <div class="tit">{{'telphone'|translate}}</div>
+            <a class="bangd" style="background:none;" ng-style="color" >
+                <input type="text" class="input_text" ng-model="data.username"  placeholder="{{'Account2'|translate}}"/><i class="iconfont icof1">&#xe620;</i>
+            </a>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit">{{'uname'|translate}}</div>
+            <!--<div class="line" >-->
+            <!--<input type="text" ng-model="data.name" class="input_text" placeholder="{{'username'|translate}}" />-->
+            <!--</div>-->
+            <a class="bangd" style="background:none;">
+                <input type="text" class="input_text" ng-model="data.name" placeholder="{{'username'|translate}}"/><i class="iconfont icof1">&#xe620;</i>
+            </a>
+
+        </li>
+        <li>
+            <div class="tit">{{'sex'|translate}}</div>
+            <!--<div class="line">-->
+            <!--<div class="text">-->
+            <!--<select ng-model="data.sex" class="boxselect">-->
+            <!--<option value="0">{{'choosesex'|translate}}</option>-->
+            <!--<option value="1">{{'boy'|translate}}</option>-->
+            <!--<option value="2">{{'girl'|translate}}</option>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--</div>-->
+            <a class="bangd"  style="background:none;">
+                <select ng-model="data.sex" class="boxselect">
+                    <option value="0">{{'sex'|translate}}</option>
+                    <option value="1">{{'boy'|translate}}</option>
+                    <option value="2">{{'girl'|translate}}</option>
+                </select>
+                <i class="iconfont icof1">&#xe620;</i>
+            </a>
+        </li>
+        <li>
+            <div class="tit">{{'age'|translate}}</div>
+            <!--<div class="line">-->
+            <!--<div class="text1" >-->
+            <!--<input id="time" name="time" ng-model="data.age" class="boxinput time{{time.index}}"  placeholder="{{'chooseage'|translate}}"  value="" readonly>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="input_sub1 iconfont" ng-click="clickDec('age',1,addtime)"><span>&#xe612;</span></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="text1"><input class="age_text input_text " style="width:4em;" type="text" ng-model="data.age"/></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="input_sub1 iconfont" ng-click="clickAdd('age',150,addtime)"><span>&#xe61f;</span></div>&ndash;&gt;-->
+            <!--<i class="iconfont">&#xe620;</i>-->
+            <!--</div>-->
+            <a class="bangd" style="background:none;">
+                <input  id="time" name="time" class="boxinput time{{time.index}}" ng-model="data.age" placeholder="{{'chooseage'|translate}}"/><i class="iconfont icof1">&#xe620;</i>
+            </a>
+        </li>
+    </ul>
+    <ul ng-show="data.area!=''&&data.area!=null">
+        <li>
+            <div class="tit">{{'area'|translate}}</div>
+            <!--<div class="line m_l">-->
+            <!--<input class="input_text area_text" type="text" ng-model="data.area" readonly="true"/>-->
+            <!--</div>-->
+            <a class="bangd" style="background:none;" ng-show="data.name">
+                {{data.area}} <i class="iconfont icof1">&#xe620;</i>
+            </a>
+
+            <i class="iconfont icof1">&#xe620;</i>
+        </li>
+    </ul>
+</div>
+<div class="initialization_input initialization_h" style="background:none;">
+    <input type="button" ng-click="layout();" class="bg_blue" value="{{'layout'|translate}}" />
+</div>
+<style>
+    .remind_editor li{
+        font-size: 0.8125em;
+    }
+
+    .remind_editor .tit {
+        float: left;
+        line-height: 2em;
+        padding-left: 0.9783em;
+        width:auto;
+    }
+    .remind_editor .input_text{
+        font-size: 1em;
+        width: auto;
+        border: none;
+        text-align: right;
+        padding-left:0;
+    }
+    .remind_editor .area_text{
+        border: none;
+    }
+    .remind_editor .input_sub1 {
+        float:left;
+        margin-top: 1em;
+        text-align:center;
+        color:#878787;
+    }
+    .remind_editor .text1 {
+        float: left;
+        line-height: 2em;
+        text-align: center;
+        color: #ffffff;
+        width: 7.835em;
+        margin-right: 1em;
+    }
+    #time{
+        color: #7a7a7a;
+    }
+    .remind_editor .text {
+        float: left;
+        width: 100%;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+        color: #878787;
+        margin-left: 0.5em;
+    }
+    select.boxselect {
+        border:0;
+        width: auto;
+        font-size: 1em;
+        color: #878787;
+        /* text-align: right; */
+        background: none;
+        margin-left: 1em;
+        direction: rtl;
+    }
+    select option {
+        direction: ltr;
+    }
+    .bangd{
+        float: right;
+        /*margin:0.5625em 3.0714em 0 5.15217em;*/
+        height: 2.3125em;
+        line-height: 2.3125em;
+        text-align: center;
+        color: #8d8d8d;
+        background: #398c99;
+        border-radius: 0.2142em;
+        overflow: hidden;
+        padding-right: 1em;
+    }
+    .icof1{
+        padding-left: 1em;
+    }
+    input.boxinput{
+        width:auto;
+        text-align:right;
+    }
+
+</style>
+
+<div class="nav_line"></div>

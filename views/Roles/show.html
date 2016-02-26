@@ -1,0 +1,163 @@
+<%- include ../head.html %>
+<body class="theme-satblue" data-theme="theme-satblue">
+<div id="main">
+    <div class="container-fluid">
+        <div class="page-header">
+        </div>
+        <% if((error&&error!="")||(success&&success!="")){ %>
+        <div class="row-fluid">
+            <div class="span12">
+                <% if(error&&error!=""){ %>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success&&success!=""){ %>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= success %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <%}%>
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="/roles/list">角色</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">查看</a>
+                </li>
+            </ul>
+            <div class="close-bread">
+                <a href="#"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box box-bordered box-color">
+                    <div class="box-title">
+                        <h3><i class="icon-th-list"></i>角色详细</h3>
+                    </div>
+                    <div class="box-content nopadding">
+                        <form  method="post" class='form-horizontal form-bordered form-validate'id="bb">
+                            <input name="role[menu]" id="menuid" type="hidden">
+                            <input name="role[roleControl]" id="roleControl" type="hidden">
+                            <div class="control-group">
+                                <label for="name" class="control-label">角色名</label>
+                                <div class="controls">
+                                    <input type="text" name="role[name]" readonly="readonly" value="<%=role.name%>" id="name" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="flag" class="control-label">启用</label>
+                                <div class="controls">
+                                    <select name="role[flag]"  disabled="disabled" id="flag" class='select2-me input-xlarge'>
+                                        <% if(role.flag=='0'){%>
+                                        <option value="0" >停用</option>
+                                        <%}%>
+                                        <% if(role.flag=='1'){%>
+                                        <option value="1">启用</option>
+                                        <%}%>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="sort" class="control-label">排序</label>
+                                <div class="controls">
+                                    <input type="text" name="role[sort]" id="sort" readonly="readonly"  value="<%=role.sort%>"class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group control-group2 " >
+                                <div class="check-line left_line " style="top:20px">
+                                    <label class='inline'>一级菜单</label>
+                                </div>
+                                <div class="controls">
+                                    <div class="check-demo-col check-demo-col2"  style=" border-right: 1px solid #ddd; margin-right: 2px">
+                                        <div class="check-line"  style="float: left;">
+                                            <label class='inline' >二级菜单</label>
+                                        </div>
+                                    </div>
+                                    <!--<div class="check-demo-col check-demo-col2">-->
+                                        <!--<div class="check-line">-->
+                                            <!--<label class='inline'>方法</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                            <% menus_p.forEach(function(menu_p,index){%>
+                            <div class="control-group control-group2">
+                                <div class="check-line left_line">
+                                    <input type="checkbox" disabled="disabled"  class='p_menu icheck-me' <%if(role.menu[menu_p._id]!=null&&role.menu[menu_p._id]!=""){%>checked=checked<%}%> data-skin="flat" name="p_menu" actr="<%=menu_p.url %>" cid="<%=menu_p.cid %>" pid="<%=menu_p.pid %>" value="<%=menu_p._id %>" id="<%=menu_p.cid %>" data-color="red"> <label class='inline' ><%=menu_p.name%></label>
+                                </div>
+                                <%menus_c.forEach(function(menu_c,index){%>
+                                <%if(menu_c.pid==menu_p.cid){%>
+                                <div class="controls">
+                                    <div class="check-demo-col check-demo-col2"   style=" border-right: 1px solid #ddd; margin-right: 2px">
+                                        <div class="check-line"  style="float: left;">
+                                            <input type="checkbox" id="<%=menu_c.cid %>" disabled="disabled"  cid="<%=menu_c.cid %>"  actr="<%=menu_c.url %>"<%if(role.menu[menu_c._id]!=null&&role.menu[menu_c._id]!=""){%>checked=checked<%}%> name="c_menu" pid="<%=menu_c.pid %>" value="<%=menu_c._id %>"class='c_menu icheck-me'  data-skin="flat" data-color="red" for="<%=menu_c._id %>"> <label class='inline' ><%= menu_c.name %></label>
+                                        </div>
+                                    </div>
+                                    <!--<%roles.forEach(function(role,index){%>-->
+                                    <!--<%if(role.menu._id==menu_c._id){%>-->
+                                    <!--<div class="check-demo-col check-demo-col2">-->
+                                        <!--<div class="check-line">-->
+                                            <!--<input type="checkbox" id="<%=role._id %>" disabled="disabled"  cid="<%=role.menu.cid %>" actr="<%=menu_r.url %>" name="r_menu" pid="<%=role.menu.pid %>" value="<%=role._id %>" class='r_menu icheck-me' data-skin="flat" data-color="red" for="<%=role._id %>"> <label class='inline' >Default</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<%}%>-->
+                                    <!--<%})%>-->
+                                </div>
+                                <%}%>
+                                <%})%>
+                            </div>
+                            <%})%>
+                            <div class="form-actions">
+                                <a href="/roles/list" target="main"><button type="button" class="btn btn-primary">&nbsp;取&nbsp;&nbsp;消&nbsp;</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .form-horizontal.form-bordered .control-group2 {
+        min-height: 40px;
+    }
+    .left_line{
+        top: 10px;
+        width: 100px;
+        float: left;
+        left: 20px;
+    }
+    .controls{
+        border-bottom: 1px solid #ddd;
+        padding:0px;
+        margin:0;
+    }
+    #main{
+        margin-left:0px;
+    }
+    .form-actions{
+        margin-top: 0px;
+    }
+    .check-demo-col2{
+        height: 20px;
+        width: 200px;
+        padding-top:10px;
+    }
+    .check-line .inline{
+        width:100px;
+    }
+    .icheckbox_flat-red.checked.disabled {
+         background-position: -22px 0;
+    }
+</style>
+</body>
+<%- include ../footer.html %>

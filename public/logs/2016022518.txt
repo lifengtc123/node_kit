@@ -1,0 +1,15 @@
+[2016-02-25 18:16:32.017] [INFO] logInfo - 测试日志信息
+[2016-02-25 18:17:39.868] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /weixin HTTP/1.1" 200 3 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:17:40.186] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /favicon.ico HTTP/1.1" 200 1406 "http://183.135.152.146/weixin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:18:16.660] [INFO] logInfo - 测试日志信息
+[2016-02-25 18:18:27.095] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /weixin HTTP/1.1" 401 - "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:18:27.311] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /favicon.ico HTTP/1.1" 200 1406 "http://183.135.152.146/weixin" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:21:11.208] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET / HTTP/1.1" 302 68 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:21:11.298] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /login HTTP/1.1" 200 1319 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:21:11.463] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /stylesheets/secure.css HTTP/1.1" 200 1389 "http://183.135.152.146/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:21:11.469] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /javascripts/jquery-1.7.2.min.js HTTP/1.1" 200 94843 "http://183.135.152.146/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:22:53.416] [INFO] logInfo - 测试日志信息
+[2016-02-25 18:23:14.405] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /login HTTP/1.1" 304 - "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:23:14.466] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /stylesheets/secure.css HTTP/1.1" 304 - "http://183.135.152.146/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:23:14.468] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /javascripts/jquery-1.7.2.min.js HTTP/1.1" 304 - "http://183.135.152.146/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"
+[2016-02-25 18:23:14.652] [INFO] logInfo - ::ffff:183.135.152.146 - - "GET /favicon.ico HTTP/1.1" 200 1406 "http://183.135.152.146/login" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36"

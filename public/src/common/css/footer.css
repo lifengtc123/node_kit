@@ -1,0 +1,18 @@
+.service{
+	padding-left:30px;
+	color:#69c;
+}
+.bridgehead {
+    text-align: left;
+    display: block;
+    width: 42px;
+    height: 155px;
+    position: fixed;
+    top: 50%;
+    left: auto;
+    right: 0px;
+    margin-right: 8px;
+    margin-top: -77px;
+    cursor:pointer;
+    background-image: url(../imgs/iconbg.jpg);
+}

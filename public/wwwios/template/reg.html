@@ -1,0 +1,35 @@
+<div class="loginheader"></div>
+<!--<div class="loginheader2"></div>-->
+<form name="userForm"ng-submit="regUser()">
+<div class="reg_editor" >
+    <ul>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em" ng-show="errorLogin">{{errorLogin}}</span>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em">{{errorPhone}}</span>
+        <li>
+            <div class="tit"><img src="images/loginphone.png"></div>
+            <div class="regline"><input type="text" name="username"class="input_text"  ng-model="data.username" placeholder="{{'Account'|translate}}" /></div>
+        </li>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em">{{errorPassword}}</span>
+        <li>
+            <div class="tit"><img src="images/loginpwd.png"></div>
+            <div class="regline"><input type="password" name="password" class="input_text" ng-model="data.password" placeholder="{{'password'|translate}}" /></div>
+        </li>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em">{{errorresetPwd}}</span>
+        <li>
+            <div class="tit"><img src="images/loginpwd.png"></div>
+            <div class="regline"><input type="password" name="resetPwd" class="input_text"ng-model="data.resetpwd" placeholder="{{'CommitPassword'|translate}}" /></div>
+        </li>
+    </ul>
+</div>
+<div class="reg_editor_input">
+    <input type="submit" ng-disabled="regdis" ng-class="regsub" value="{{'registerTitle'|translate}}"/>
+</div>
+</form>
+<div style="margin:0.3em 1.2em">
+  <div class="check" ng-class="checked" style="float: left;">
+    <input type="checkbox" ng-model="check" class="input_check">
+  </div>
+    <span style="font-size:0.6em">{{'agree'|translate}}<a href="#" style="color:#5f92ed">{{'Agreement'|translate}}</a></span>
+</div>
+
+

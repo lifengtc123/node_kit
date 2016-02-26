@@ -1,0 +1,129 @@
+<div class="header_line"></div>
+
+<div class="remind_editor">
+    <ul>
+        <li>
+            <div class="tit">{{'username'|translate}}</div>
+            <div class="line m_l" ><input type="text" ng-model="data.name" class="input_text" /></div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit">{{'sex'|translate}}</div>
+            <div class="line m_l">
+                <div class="text"><select ng-model="data.sex"  class="boxselect">
+                    <option value="1">{{'boy'|translate}}</option>
+                    <option value="2">{{'girl'|translate}}</option>
+                </select></div>
+             </div>
+        </li>
+        <li>
+            <div class="tit">{{'age'|translate}}</div>
+            <div class="line m_l">
+                <div class="text1" style="background-color:#398C99" >
+                    <input id="time" name="time" ng-model="data.age" class="boxinput time{{time.index}}" value="" readonly>
+                </div>
+                <!--<div class="input_sub1 iconfont" ng-click="clickDec('age',1,addtime)"><span>&#xe612;</span></div>-->
+                <!--<div class="text1"><input class="age_text input_text " style="width:4em;" type="text" ng-model="data.age"/></div>-->
+                <!--<div class="input_sub1 iconfont" ng-click="clickAdd('age',150,addtime)"><span>&#xe61f;</span></div>-->
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit">{{'weixin'|translate}}</div>
+            <div class="line m_l" ng-show="data.weixin">
+                <input class="input_text" type="text" ng-model="data.weixin" readonly="true" />
+
+            </div>
+            <div class="bangd" ng-show="!data.weixin" style="background:none;">
+                <input type="button" ng-click="wxlogin()" class="bg_blue" value="{{'binding'|translate}}"/>
+            </div>
+        </li>
+        <li>
+            <div class="tit">{{'telphone'|translate}}</div>
+            <div class="line m_l">
+                <input class="input_text" type="text" ng-model="data.username" readonly="true" ng-show="$state.username"/>
+                <input class="input_text" type="text" ng-model="data.username" ng-show="!$state.username" />
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit">{{'area'|translate}}</div>
+            <div class="line m_l">
+                <input class="input_text area_text" type="text" ng-model="data.area" readonly="true"/>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="initialization_input initialization_h" style="background:none;">
+    <input type="button" ng-click="layout();" class="bg_blue" value="{{'layout'|translate}}" />
+</div>
+<style>
+    
+    .remind_editor .input_text{
+        font-size: 1em;
+        width: 7.835em;
+        border: solid 0.09em #e2e2e2;
+        text-align: center;
+    }
+    .remind_editor .area_text{
+        border: none;
+    }
+    .remind_editor .input_sub1 {
+        float:left;
+        margin-top: 1em;
+        text-align:center;
+        color:#878787;
+    }
+    .remind_editor .text1 {
+        float: left;
+        line-height: 2em;
+        text-align: center;
+        color: #ffffff;
+        width: 7.835em;
+        margin-right: 1em;
+    }
+    #time{
+        background-color: #398C99;
+        color: #ffffff;
+    }
+    .remind_editor .text {
+        float: left;
+        width: 100%;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+        color: #878787;
+        margin-left: 0.5em;
+    }
+    select.boxselect {
+        border: 0;
+        width: 100%;
+        font-size: 1em;
+        color: #878787;
+        text-align: center;
+        background: none;
+        margin-left: 0.5em;
+    }
+    .bangd{
+        margin:0.5625em 3.0714em 0 5.15217em;
+        height: 2.3125em;
+        line-height: 2.3125em;
+        text-align: center;
+        color: #fff;
+        background: #398c99;
+        border-radius: 0.2142em;
+        overflow: hidden;
+        padding-left: 1em;
+    }
+    .bangd input {
+        background:none; border:none;
+        width: 100%;
+        height:100%;
+        color:#fff;
+        font-size:0.828125em;}
+</style>
+
+<div class="nav_line"></div>

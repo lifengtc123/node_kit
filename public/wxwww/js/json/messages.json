@@ -1,0 +1,31 @@
+{
+  "messages":[
+    {
+      "id": 1,
+      "time":"12:00",
+
+      "type": "1",
+      "title":"未吃药提醒",
+      "from": "来自：爸爸的药盒",
+      "content": "药物：维生素1颗"
+    },
+    {
+      "id": 12,
+      "time":"13:00",
+      "type": "2",
+      "title": "录音提醒",
+      "from": "对象：爸爸的药盒",
+      "sound":"/url"
+    },
+    {
+      "id": 23,
+      "time":"14:00",
+      "type": "3",
+      "title": "最新资讯",
+      "from": "",
+      "content": "药物混吃有没有问题",
+      "picurl": "images/pic.jpg"
+    }
+      ]
+
+}

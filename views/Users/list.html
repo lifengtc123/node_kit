@@ -1,0 +1,198 @@
+<%- include ../head2.html %>
+<body onload="onload()" >
+<div class="container-fluid" id="content">
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                
+            </div>
+            <% if((error&&error!="")||(success&&success!="")){ %>
+            <div class="row-fluid" id="msgDiv">
+             <div class="span12">
+                 <% if(error&&error!=""){ %>
+                    <div class="alert alert-error">
+                       <button type="button" class="close" data-dismiss="alert">&times;</button>
+                       <%= error %>
+                    </div>
+                 <% } %>
+                 <% if(success&&success!=""){ %>
+                 <div class="alert alert-success">
+                     <button type="button" class="close" data-dismiss="alert">&times;</button>
+                     	<%= success %>
+                 </div>
+                 <% } %>
+             </div>
+            </div>
+            <script>
+                setTimeout(function(){
+                    $("#msgDiv").hide();
+                },3000);
+            </script>
+         <%}%>
+            <div class="breadcrumbs">
+                <ul>
+                <li>
+                    <a href="/users/list">管理员管理</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">管理员列表</a>
+                </li>
+            </ul>
+                <div class="close-bread">
+                    <a href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box box-color box-bordered dataTables_wrapper">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-table"></i>
+                                管理员列表
+                            </h3>
+                        </div>
+                        <div class="box-content nopadding">
+                            <form action="<%=pagedlist.getCallbackURL(pagedlist.pageNumber)%>" method="GET" id="form" style="margin:0;">
+                                <div class="dataTables_length"><label><select name="pageSize" size="1" onchange="$('#form').submit()">
+                                    <option value="10" <%= pagedlist.pageSize==10?"selected":""%> >10</option>
+                                    <option value="25" <%= pagedlist.pageSize==25?"selected":""%> >25</option>
+                                    <option value="50" <%= pagedlist.pageSize==50?"selected":""%> >50</option>
+                                    <option value="100" <%= pagedlist.pageSize==100?"selected":""%> >100</option>
+                                </select> <span>列每页</span></label>
+                                </div>
+                                <script>
+
+                                    $(".dataTables_length select").wrap("<div class='input-mini'></div>").chosen({
+                                        disable_search_threshold: 9999999
+                                    });
+                                </script>
+                                <div class="dataTables_filter hidden-480" ><label><span>搜索:</span>  <input type="text" name="search" placeholder="输入搜索" value="<%=pagedlist.params.search%>"></label></div>
+                            </form>
+                            <table class="table table-hover table-nomargin dataTable table-bordered dataTable-scroller dataTable-tools">
+                                <thead>
+                                <tr>
+                                    <th class='with-checkbox'><input type="checkbox" name="check_all" id="check_all"></th>
+                                    <th class='hidden-768'>用户名</th>
+                                    <th>真实姓名</th>
+                                    <th class='hidden-1024'>性别</th>
+                                    <th class='hidden-768'>状态</th>
+                                    <th>角色</th>
+                                    <th class='hidden-480'>机构</th>
+                                    <th class='hidden-350'>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <% pagedlist.data.forEach(function(obj,index){%>
+	                                <tr>
+	                                    <td class="with-checkbox">
+	                                        <input type="checkbox" name="check_list" value="<%=obj._id%>">
+	                                    </td>
+	                                    <td class='hidden-768'><%=obj.username%></td>
+	                                    <td><%=obj.name%></td>
+
+	                                    <td class='hidden-1024'>
+	                                    	<% if(obj.sex==1) {%>
+	                                    		男
+	                                    	<% }else {%>
+	                                    		女
+	                                    	<% }%>
+	                                    </td>
+	                                    <td class='hidden-480'>
+	                                    	<% if(obj.flag==1) {%>
+	                                    		启用
+	                                    	<% }else {%>
+	                                    		<font color="red">禁用</font>
+	                                    	<% }%>
+                                    	</td>
+
+                                    	<td><%if(obj.roleId!=null){%><%=obj.roleId.name%><%}%></td>
+	                                    
+	                                     <td class='hidden-480'><%if(obj.departId!=null){%><%=obj.departId.name%><%}%></td>
+	                                    <td class='hidden-350'><a href="/users/show?id=<%=user._id%>" class="listicon" data-original-title="点击查看" data-placement="bottom" title=""><i class="icon-folder-open"></i>查看</a>
+	                                        <a href="/users/edit?id=<%=obj._id%>" class="listicon" data-original-title="点击修改" data-placement="bottom" title=""><i class="icon-edit"></i>修改</a>
+	                                        <a  href="#" onclick="disp_confirm('<%=obj._id%>')" data-toggle="modal" class="listicon" data-original-title="点击删除" data-placement="bottom" title="" ><i class="icon-remove"></i>删除</a>
+	                                   </tr>
+	
+	                                <%})%>
+                                </tbody>
+                            </table>
+                            <%- include ../tags/page.html %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid" style="margin-top:1%">
+                <div class="span12">
+                    <p>
+                         <a href="/users/blank"  ><button class="btn btn-primary"><i class="icon-plus"></i>&nbsp;添&nbsp;&nbsp;加&nbsp;</button></a>
+                        <a  href="#" onclick="deleteMenus()" target="main"><button class="btn btn-primary"><i class="icon-remove"></i>&nbsp;删&nbsp;&nbsp;除&nbsp;</button></a>
+                    </p>
+                </div>
+            </div>
+            <style>
+                #main{
+                    margin-left:0px;
+                }
+             .listicon{
+                 margin-left: 2%;
+             }
+                .theme-satgreen a{
+                    color:#368ee0;
+                }
+                .dataTables_wrapper .dataTables_length{
+                    min-width:0px;
+                }
+          </style>
+        </div>
+    </div></div>
+
+<script>
+    //隐藏搜索框，两种办法，一个修改jquery.dataTables.min.js，在sFILTER中添加hidden-480，二:js添加一个css
+    function onload(){
+        $("#DataTables_Table_0_filter").addClass("hidden-480");
+    }
+    function deleteMenus() {
+        var array =[];
+        var flag;
+        $("input[name='check_list']:checkbox").each(function(){
+            if ($(this).prop("checked")) {
+                flag = true; //只要有一个被选择 设置为 true
+            }
+        })
+        if (flag) {
+            $("input[name='check_list']:checkbox").each(function() { //遍历所有的name为selectFlag的 checkbox
+                if ($(this).prop("checked")) { //判断是否选中
+                    array.push($(this).val()); //将选中的值 添加到 array中
+                }
+            })
+            var r=confirm("请确认是否删除数据，删除后数据无法恢复！");
+            if(r==true){
+                window.location.href = "/users/removeCheck?info="+array;
+            }
+        } else {
+            alert("请至少选择一个用户");
+        }
+    }
+    function disp_confirm(id)
+    {
+        var r=confirm("请确认是否删除数据，删除后数据无法恢复！")
+        if (r==true)
+        {
+            window.location.href="/users/remove?id="+id;
+        }
+        else
+        {
+        }
+    }
+
+    $('[name="search"]').bind('keypress',function(event){
+        if(event.keyCode == "13")
+        {
+            $('#form').submit();
+        }
+    });
+</script>
+
+</body>
+<%- include ../footer.html %>

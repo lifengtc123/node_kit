@@ -1,0 +1,24 @@
+<div class="loginheader"></div>
+<!--<div class="loginheader2"></div>-->
+<form name="userForm" ng-submit="userforget()">
+<div class="reg_editor">
+
+    <ul>
+        <span class="help-block" style="color:#ff0000;font-size:0.951em;margin-left:2.4em" ng-show="errorLogin">{{errorLogin}}</span>
+        <span class="help-block" style="color:#ff0000;font-size:0.951em;margin-left:2.4em">{{errorPhone}}</span>
+        <li>
+            <div class="tit"><img src="images/loginphone.png"></div>
+            <div class="regline"><input type="text" name="name"  ng-model="data.username" class="input_text" placeholder="请输入手机号" /></div>
+        </li>
+        <span class="help-block" style="color:#ff0000;font-size:0.951em;margin-left:2.4em">{{errorPassword}}</span>
+        <li>
+            <div class="tit"><img src="images/loginpwd.png"></div>
+            <div class="regline"><input type="password" name="password" class="input_text"ng-model="data.password" placeholder="请设置新密码" /></div>
+        </li>
+    </ul>
+</div>
+<div class="reg_editor_input">
+    <input type="submit" style="background: #22b8b2!important;" value="确       认" />
+</div>
+</form>
+

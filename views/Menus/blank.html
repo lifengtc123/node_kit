@@ -1,0 +1,116 @@
+<%- include ../head.html %>
+<body >
+<div id="main">
+    <div class="container-fluid">
+        <div class="page-header">
+        </div>
+        <% if((error&&error!="")||(success&&success!="")){ %>
+        <div class="row-fluid" id="msgDiv">
+            <div class="span12">
+                <% if(error&&error!=""){ %>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success&&success!=""){ %>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= success %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <script>
+            setTimeout(function(){
+                $("#msgDiv").hide();
+            },3000);
+        </script>
+        <%}%>
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="/menus/list">菜单</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">添加</a>
+                </li>
+            </ul>
+            <div class="close-bread">
+                <a href="#"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box box-bordered box-color">
+                    <div class="box-title">
+                        <h3><i class="icon-th-list"></i>添加新菜单</h3>
+                    </div>
+                    <div class="box-content nopadding">
+                        <form action="/menus/save" method="post" class='form-horizontal form-bordered form-validate'id="bb">
+                            <div class="control-group">
+                                <label for="pid" class="control-label">上一级</label>
+                                <div class="controls">
+                                    <select name="menu[pid]" id="pid" class='select2-me input-xlarge'>
+                                        <option value="0">一级菜单</option>
+                                        <% menus.forEach(function(menu,index){%>
+                                        <option value="<%= menu.cid%>"><%= menu.name%></option>
+                                        <%})%>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="name" class="control-label">菜单名<span style="color: red">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="menu[name]" id="name" placeholder="" data-rule-required="true" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="url" class="control-label">方法路径<span style="color: red">*</span></label>
+                                <div class="controls">
+                                    <input type="text" name="menu[url]" id="url" placeholder="" data-rule-required="true"  class="input-xlarge" >
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="icon" class="control-label">图标</label>
+                                <div class="controls">
+                                    <input type="text" name="menu[icon]" id="icon" placeholder="" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="sort" class="control-label">排序</label>
+                                <div class="controls">
+                                    <input type="text" name="menu[sort]" id="sort" placeholder="" data-rule-digits="true" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="flag" class="control-label">启用</label>
+                                <div class="controls">
+                                    <select name="menu[flag]" id="flag" class='select2-me input-xlarge'>
+                                        <option value="0">停用</option>
+                                        <option value="1" selected="selected">启用</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">&nbsp;保&nbsp;&nbsp;存&nbsp;</button>
+                                <a href="/menus/list" target="menus_main"><button type="button" class="btn btn-primary">&nbsp;取&nbsp;&nbsp;消&nbsp;</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #main{
+        margin-left:0px;
+    }
+    .form-actions{
+        margin-top: 0px;
+    }
+</style>
+</body>
+<%- include ../footer.html %>

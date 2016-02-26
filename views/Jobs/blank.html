@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="/jobs/create" method="post" enctype="multipart/form-data">
+
+    药盒编码：<input name="job[boxNumber]" />
+    <br>
+    消息类型：<input name="job[type]">
+    <br>
+    孔类型：<input name="job[hole]">
+    <br>
+    任务ID：<input name="job[id]">
+    <br>
+    操作类型：<input name="job[state]">
+    <br>
+    任务的时间间隔：<input name="job[interval]">
+    <br>
+    声音地址：<input type="file" name="job[filepath]">
+    <br>
+    时间1：<input type="date" name="job[time1]">
+    <br>
+    时间1：<input type="date" name="job[time1]">
+    <br>
+    时间2：<input type="date" name="job[time2]">
+    <br>
+    时间2：<input type="date" name="job[a][0][time1]">
+    <br>
+    时间2：<input type="date" name="job[a][1][time1]">
+
+    <br>
+    时间2：<input type="date" name="job[a][0][time2]">
+    <br>
+    时间2：<input type="date" name="job[a][1][time2]">
+
+    <button>保存</button>
+
+</form>
+
+</body>
+</html>

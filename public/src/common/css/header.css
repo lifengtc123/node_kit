@@ -1,0 +1,250 @@
+/* 底部控制 */
+html{height:100%; background: #f7f7f7 }
+body{position:relative;min-height:100%; height:auto !important; height:100%; }
+.beforefooter{height: 60px;}
+
+body{
+	background: url( ../imgs/body_bg.png ) repeat-x top center #ffffff;
+}
+/*body{overflow-y:scroll}*/
+.middle{ margin: 0 auto; }
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+li{
+	list-style: none;
+}
+ul,dl,dt,dd{
+	margin:0;
+	padding:0;
+}
+*{
+	font-family: 'Microsoft Yahei', Arial, Simsun, sans-serif;
+}
+.hide{
+	visibility: hidden !important;
+	display: none !important;
+}
+.show{
+	visibility: visible !important;
+	display: block !important;
+}
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
+.container{
+	width: 960px !important;
+	margin: 0 auto;
+	-moz-box-shadow:2px 2px 5px #a3a3a3;/*firefox*/
+	-webkit-box-shadow:0px 0px 5px #a3a3a3;/*webkit*/
+	box-shadow:0px 0px 5px #a3a3a3;/*opera锟斤拷ie9*/
+	background: #fff;
+	margin-top: 10px;
+	min-height: 400px;
+	padding-bottom: 10px;
+}
+.container *{
+	filter: none;
+}
+/*
+	header
+*/
+.header{
+	width: 960px;
+	height: 65px;
+	margin: 0 auto;
+}
+
+.header .logo{
+	width: 180px;
+	height: 65px;
+	float: left;
+	line-height: 65px;
+	background: url(../imgs/logo.png) 0px center no-repeat;
+}
+
+.header .nav{
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	float: right;
+}
+
+.header .nav li{
+	float: right;
+	line-height: 30px;
+}
+
+.header .nav li a{
+	display: block;
+	line-height: 30px;
+	padding: 0 10px;
+	color: #000;
+}
+
+/*
+	navigator
+*/
+.navigator{
+	width: 960px;
+	background: #fff;
+	height: 38px;
+	margin: 0 auto;
+	line-height: 38px;
+	/*filter: progid:DXImageTransform.Microsoft.Shadow(color='#c6c6c6', Direction=135, Strength=3);*//*for ie6,7,8*/
+	-moz-box-shadow:0 2px 3px #c6c6c6;/*firefox*/
+	-webkit-box-shadow:0px 0px 3px #c6c6c6;/*webkit*/
+	box-shadow:0 1px 3px #c6c6c6;/*opera锟斤拷ie9*/
+	-webkit-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: url( ../imgs/navigator_bg.jpg ) #fff repeat-x;
+	position: relative;
+    *z-index: 1;
+    border:1px solid #c6c6c6\9;
+}
+
+.navigator li{
+	float: left;
+}
+
+.navigator li a{
+	display: block;
+	font-weight: 500;
+	line-height: 38px;
+	padding: 0 40px;
+	color: #000;
+	font-size: 14px;
+}
+
+.navigator li a.current{
+	color: #ff4605;
+}
+
+/*
+	footer
+*/
+
+.footerBox{
+	width: 100%;
+	background: #ebebeb;
+	margin-top: 3px;
+	position: absolute;
+	bottom: 0;
+}
+
+.footer{
+	width: 960px;
+	height: 58px;
+	margin: 0 auto !important;
+	position:relative;
+}
+
+.footer .flogo{
+	margin: 20px auto 0;
+	width: 650px;
+	text-align: center;
+}
+
+#returnTop {
+	display: block;
+	position: fixed;
+	bottom: 10px;
+    /*
+	left: 50%;
+	margin-left: 480px;
+	*/
+    right:0;
+	display:none;
+	z-index: 999;
+}
+
+#returnTop #gotoTop{
+	width:60px;
+	height:50px;
+	cursor:pointer;
+	margin-bottom:10px;
+	background: url( ../imgs/totop.png ) no-repeat;
+}
+
+#returnTop #showCode{
+	width:60px;
+	height:40px;
+	background: url( ../deps/imgs/show_qrcode.png ) no-repeat;	
+}
+
+#returnTop #qrcode{
+	width:252px;
+	height:80px;
+	padding-top:235px;
+	position:absolute;
+	background: url( ../deps/imgs/qrcode.png ) no-repeat;	
+	text-align:center;
+	left:-251px;
+	top:-220px;
+	display:none;
+}
+
+#returnTop #qrcode .qrTitle{
+	color:#000;
+	font-size:18px;
+	margin-bottom:5px;
+}
+#returnTop #qrcode .qrText{
+	color:#868686;
+	font-size:12px;
+}
+
+.navigator .number,
+.navigator .deadline {
+	position: absolute;
+	width: 34px;
+	height: 21px;
+	background: url("../imgs/icons/icon_num.png") no-repeat center center;
+	left: 325px;
+	top: -5px;
+    *top:0px;
+    *left:340px;
+	line-height: 20px;
+	color: #FFFFFF;
+	text-align: center;
+	display: none;
+}
+.navigator .deadline{
+	display:block;
+	font-size:12px;
+	left:430px;
+    left:445px;
+}
+
+.navigator .newSerivcenav {
+    position: absolute;
+    width: 34px;
+    height: 24px;
+    background: url("../imgs/new_nav.png") no-repeat center center;
+    top: -5px;
+    *top:-1px;
+    left:482px;
+    line-height: 21px;
+    color: #FFFFFF;
+    text-align: center;
+    display: none;
+}
+
+/* 鐜板満瑙嗛銆佽繙绋嬪綍鍍忋�鏈湴褰曞儚鏍峰紡 */
+body.no_bg, html.no_bg{
+	background-image:none;
+}
+.no_bg .container{
+	
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background:transparent;
+}

@@ -1,0 +1,148 @@
+<%- include ../head.html %>
+<!-- imagesLoaded -->
+	<script src="/js/plugins/imagesLoaded/jquery.imagesloaded.min.js"></script>
+<!-- Custom file upload -->
+	<script src="/js/plugins/fileupload/bootstrap-fileupload.min.js"></script>
+<body class="theme-satblue" data-theme="theme-satblue">
+<div id="main">
+    <div class="container-fluid">
+        <div class="page-header">
+        </div>
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="/users/list">管理员管理</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">添加管理员</a>
+                </li>
+            </ul>
+            <div class="close-bread">
+                <a href="#"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="box box-bordered box-color">
+            <div class="box-title">
+                <h3><i class="icon-th-list"></i>添加管理员</h3>
+            </div>
+            <div class="box-content nopadding">
+                <form action="/users/save" method="post" enctype="multipart/form-data" class='form-horizontal form-column form-bordered form-validate'id="bb" >
+                    
+                    <div class="span6">
+                    <div class="control-group">
+                        <label for="name" class="control-label">用户名<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <input type="text" name="user[username]" id="username" placeholder="" data-rule-required="true" class="input-xlarge">
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <label for="name" class="control-label">真实名称<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <input type="text" name="user[name]" id="name" placeholder="" data-rule-required="true" class="input-xlarge">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="name" class="control-label">密码<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <input type="password" name="user[password]" id="password" placeholder="" data-rule-required="true" class="input-xlarge">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="name" class="control-label">生日</label>
+                        <div class="controls">
+                        	<input type="text" name="user[birthday]" id="birthday" class="input-xlarge datepick">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="name" class="control-label">性别<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <select name="user[sex]" id="sex" class='select2-me input-xlarge'>
+                                <option value="0">女</option>
+                                <option value="1" selected="selected">男</option>
+                            </select>
+                        </div>
+                    </div>
+                        <div class="control-group">
+                            <label for="name" class="control-label">头像</label>
+                            <div class="controls">
+                                <div class="span2">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="fileupload-new thumbnail" style="max-width: 200px; max-height: 150px;"><img src="/img/demo/user-1.jpg" width="200px" height="150px"/></div>
+                                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                        <div>
+                                            <span class="btn btn-file"><span class="fileupload-new">选择</span><span class="fileupload-exists">选择</span><input type="file" name="user[image]" placeholder="" data-rule-required="false" class="input-xlarge" /></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                    <div class="control-group">
+                        <label for="name" class="control-label">联系电话</label>
+                        <div class="controls">
+                            <input type="text" name="user[phone]" id="phone" placeholder=""  class="input-xlarge">
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <label for="name" class="control-label">邮箱</label>
+                        <div class="controls">
+                            <input type="text" name="user[email]" id="email" placeholder="" class="input-xlarge">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="flag" class="control-label">启用</label>
+                        <div class="controls">
+                            <select name="user[flag]" id="flag" class='select2-me input-xlarge'>
+                                <option value="0">停用</option>
+                                <option value="1" selected="selected">启用</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="roleId" class="control-label">角色<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <select name="user[roleId]" id="roleId" class='select2-me input-xlarge' data-rule-required="true">
+                                <% roles.forEach(function(role,index){%>
+                                <option value="<%= role._id%>"><%= role.name%></option>
+                                <%})%>
+                            </select>
+                        </div>
+                    </div>
+                   <div class="control-group">
+                        <label for="departId" class="control-label">部门<span style="color: red">*</span></label>
+                        <div class="controls">
+                            <select name="user[departId]" id="departId" class='select2-me input-xlarge' data-rule-required="true">
+                                <% departs.forEach(function(depart,index){%>
+                                <option value="<%= depart._id%>"><%= depart.name%></option>
+                                <%})%>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="span12">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">&nbsp;保&nbsp;&nbsp;存&nbsp;</button>
+                        <a href="/users/list" ><button type="button" class="btn btn-primary">&nbsp;取&nbsp;&nbsp;消&nbsp;</button></a>
+                    </div>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+<style>
+    #main{
+        margin-left:0px;
+    }
+    .form-actions{
+         margin-top: 0px;
+    }
+</style>
+</body>
+<%- include ../footer.html %>

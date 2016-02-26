@@ -1,0 +1,19 @@
+<div class="header_line"></div>
+
+<div class="remind_tit">
+    <div class="name"><img src="{{img}}" /><span>
+        <select class="boxselect" ng-change="changeBox()" ng-model="boxname">
+        <option ng-repeat="boxlist in boxlists" value="{{boxlist.number}}">
+            {{boxlist.name}}
+        </option>
+    </select></span></div>
+    <div class="tit">
+        <ul>
+            <li ui-sref-active="on"><a ui-sref="alert.yy">{{'alertDrug'|translate}}</a></li>
+            <li ui-sref-active="on"><a ui-sref="alert.sh">{{'alertLife'|translate}}</a></li>
+        </ul>
+    </div>
+</div>
+<div ui-view style="top:9.5em;">
+
+</div>

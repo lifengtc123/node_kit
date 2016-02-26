@@ -1,0 +1,229 @@
+<%- include ../head.html %>
+<body class="theme-satblue" data-theme="theme-satblue">
+<div id="main">
+    <div class="container-fluid">
+        <div class="page-header">
+        </div>
+        <% if((error&&error!="")||(success&&success!="")){ %>
+        <div class="row-fluid">
+            <div class="span12">
+                <% if(error&&error!=""){ %>
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success&&success!=""){ %>
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <%= success %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <%}%>
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="/roles/list">角色</a>
+                    <i class="icon-angle-right"></i>
+                </li>
+                <li>
+                    <a href="#">修改</a>
+                </li>
+            </ul>
+            <div class="close-bread">
+                <a href="#"><i class="icon-remove"></i></a>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box box-bordered box-color">
+                    <div class="box-title">
+                        <h3><i class="icon-th-list"></i>角色修改</h3>
+                    </div>
+                    <div class="box-content nopadding">
+                        <form action="/roles/update" onsubmit="return submit_form()" method="post" class='form-horizontal form-bordered form-validate'id="bb">
+                            <input name="role[_id]" id="roleid" value="<%=role._id%>" type="hidden">
+                            <input name="role[menu]" id="menuid" type="hidden">
+                            <input name="role[roleControl]" id="roleControl" type="hidden">
+                            <div class="control-group">
+                                <label for="name" class="control-label">角色名</label>
+                                <div class="controls">
+                                    <input type="text" name="role[name]"  value="<%=role.name%>" data-rule-required="true"  id="name" class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="flag" class="control-label">启用</label>
+                                <div class="controls">
+                                    <select name="role[flag]" id="flag" class='select2-me input-xlarge'>
+                                        <option value="1" <% if(role.flag=='1'){%>selected="selected"<%}%> >启用</option>
+                                        <option value="0" <% if(role.flag=='0'){%>selected="selected"<%}%> >停用</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label for="sort" class="control-label">排序</label>
+                                <div class="controls">
+                                    <input type="text" name="role[sort]" id="sort" data-rule-digits="true"   value="<%=role.sort%>"class="input-xlarge">
+                                </div>
+                            </div>
+                            <div class="control-group control-group2 " >
+                                <div class="check-line left_line " style="top:20px">
+                                    <label class='inline'>一级菜单</label>
+                                </div>
+                                <div class="controls">
+                                    <div class="check-demo-col check-demo-col2"  style=" border-right: 1px solid #ddd; margin-right: 2px">
+                                        <div class="check-line"  style="float: left;">
+                                            <label class='inline' >二级菜单</label>
+                                        </div>
+                                    </div>
+                                    <!--<div class="check-demo-col check-demo-col2">-->
+                                        <!--<div class="check-line">-->
+                                            <!--<label class='inline'>方法</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                            <% menus_p.forEach(function(menu_p,index){%>
+                            <div class="control-group control-group2">
+                                <div class="check-line left_line">
+                                    <input type="checkbox"  class='p_menu icheck-me' data-skin="flat" name="p_menu" actr="<%=menu_p.url %>" cid="<%=menu_p.cid %>" pid="<%=menu_p.pid %>" value="<%=menu_p._id %>" id="<%=menu_p.cid %>" data-color="red"  <%if(role.menu[menu_p._id]!=null&&role.menu[menu_p._id]!=""){%>checked=checked<%}%>> <label class='inline' ><%=menu_p.name%></label>
+                                </div>
+                                <%menus_c.forEach(function(menu_c,index){%>
+                                <%if(menu_c.pid==menu_p.cid){%>
+                                <div class="controls">
+                                    <div class="check-demo-col check-demo-col2"   style=" border-right: 1px solid #ddd; margin-right: 2px">
+                                        <div class="check-line"  style="float: left;">
+                                            <input type="checkbox" id="<%=menu_c.cid %>"  cid="<%=menu_c.cid %>"  actr="<%=menu_c.url %>"<%if(role.menu[menu_c._id]!=null&&role.menu[menu_c._id]!=""){%>checked=checked<%}%> name="c_menu" pid="<%=menu_c.pid %>" value="<%=menu_c._id %>"class='c_menu icheck-me'  data-skin="flat" data-color="red" for="<%=menu_c._id %>"> <label class='inline' ><%= menu_c.name %></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%}%>
+                                <%})%>
+                            </div>
+                            <%})%>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">&nbsp;保&nbsp;&nbsp;存&nbsp;</button>
+                                <a href="/roles/list" target="main"><button type="button" class="btn btn-primary">&nbsp;取&nbsp;&nbsp;消&nbsp;</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var array =[];
+    var rarray=[];
+    function submit_form(){
+        $("input[name='p_menu']:checkbox").each(function(){
+            if ($(this).prop("checked")) { //判断是否选中
+                var actr=$(this).attr("actr");
+                var key=$(this).val()+"!---!"+actr;
+                array.push(key); //将选中的值 添加到 array中
+            }
+        });
+        $("input[name='c_menu']:checkbox").each(function(){
+            if ($(this).prop("checked")) { //判断是否选中
+                var actr=$(this).attr("actr");
+                var key=$(this).val()+"!---!"+actr;
+                array.push(key); //将选中的值 添加到 array中
+            }
+        });
+        $("input[name='r_menu']:checkbox").each(function(){
+            if ($(this).prop("checked")) { //判断是否选中
+                rarray.push($(this).val()); //将选中的值 添加到 array中
+            }
+        });
+        document.getElementById("menuid").value=array;
+        document.getElementById("roleControl").value=rarray;
+    }
+    $(function(){
+        $(".menu").click(function(){
+            var checked = $(this).attr("checked");
+            $(".p_menu").each(function(){
+                $(this).attr("checked",checked);
+            });
+            $(".c_menu").each(function(){
+                $(this).attr("checked",checked);
+            });
+            $(".r_menu").each(function(){
+                $(this).attr("checked",checked);
+            });
+        });
+        $(".p_menu").click(function(){
+            var cid = $(this).attr("cid");
+            var checked =$(this).prop("checked");
+            $(".c_menu").each(function(){
+                if($(this).attr("pid")==cid){
+                    $("#"+cid).parent().addClass("checked");
+                    $("#"+cid).attr("checked",checked);
+                }
+            });
+            $(".r_menu").each(function(){
+                if($(this).attr("pid")==cid){
+                    $("#"+cid).parent().addClass("checked");
+                    $("#"+cid).attr("checked",checked);
+                }
+            });
+        });
+        $(".c_menu").click(function(){
+            var pid = $(this).attr("pid");
+            var cid = $(this).attr("cid");
+            var checked =$(this).prop("checked");
+            if(checked){
+                $("#"+pid).parent().addClass("checked");
+                $("#"+pid).attr("checked",checked);
+            }
+        });
+        $(".r_menu").click(function(){
+            var pid = $(this).attr("pid");
+            var cid = $(this).attr("cid");
+            var checked = $(this).prop("checked");
+            if(checked){
+                $("#"+cid).parent().addClass("checked");
+                $("#"+pid).parent().addClass("checked");
+                $("#"+pid).attr("checked",checked);
+                $("#"+cid).attr("checked",checked);
+            }
+        });
+    })
+</script>
+<style>
+    .form-horizontal.form-bordered .control-group2 {
+        min-height: 40px;
+    }
+    .left_line{
+        top: 10px;
+        width: 100px;
+        float: left;
+        left: 20px;
+    }
+    .controls{
+        border-bottom: 1px solid #ddd;
+        padding:0px;
+        margin:0;
+    }
+    #main{
+        margin-left:0px;
+    }
+    .form-actions{
+        margin-top: 0px;
+    }
+    .check-demo-col2{
+        height: 20px;
+        width: 200px;
+        padding-top:10px;
+    }
+    .check-line .inline{
+        width:100px;
+    }
+    /*.icheckbox_flat-red.checked.disabled {*/
+        /*background-position: -22px 0;*/
+    /*}*/
+</style>
+</body>
+<%- include ../footer.html %>

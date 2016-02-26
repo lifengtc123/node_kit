@@ -1,0 +1,101 @@
+<%- include ../head2.html %>
+<script>
+    $(function(){
+        $("#tree").dynatree({
+            title: "Event samples",
+            rootVisible: true,
+            onActivate: function(dtnode) {
+                logMsg("onActivate(%o)", dtnode);
+                $("#echoActive").text(dtnode.data.title);
+                if( dtnode.data.pid )
+                    parent.frames["menus_main"].TableAjax.setUrl("/menus/ajaxlist?pid="+dtnode.data.pid)
+            }
+        });
+
+    });
+    function getList(pid){
+        parent.frames["menus_main"].TableAjax.setUrl("/menus/ajaxlist?pid="+pid);
+    }
+</script>
+<div class="container-fluid" id="content">
+<div id="main" class="left">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="box">
+                <div class="box-title">
+                    <h3>
+                        <i class="icon-reorder"></i>
+                        系统菜单
+                    </h3>
+                    <a href="/menus/left" ><h3 style="margin-left: 1em"><i class="icon-repeat"></i></h3></a>
+                </div>
+                <div class="box-content nopadding">
+                    <div class="span4">
+                        <div id="tree" class="filetree">
+                            <ul>
+                                <% menus_p.forEach(function(menu_p,index){%>
+                                   <li class="folder" data="pid:'<%=menu_p.pid%>'">
+                                       <%=menu_p.name%>
+                                       <%if(menus_c.length>0){%>
+                                       <ul>
+                                       <% menus_c.forEach(function(menu_c,index){%>
+                                           <%if(menu_c.pid==menu_p.cid){%>
+                                           <li data="pid:'<%=menu_c.pid%>'"><%=menu_c.name%></li>
+                                            <%}%>
+                                           <%})%>
+                                       </ul>
+                                       <%}%>
+                                   </li>
+                                <%})%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+<style>
+    body {
+        background: #eee;
+
+    }
+    .left{
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #eee;
+        height: 100%;
+        overflow-x: visible;
+    }
+    #main {
+        background: #eee;
+        margin-left: 200px;
+        overflow: visible;
+        padding-bottom:0px;
+    }
+    .container-fluid{
+        background: #eee;
+    }
+    .box .box-content {
+        padding: 20px;
+         background: #eee;
+    }
+    .box .box-title {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0 7px 0px;
+        margin-top: 10px;
+    }
+
+    .filetree{
+        background: #eee;
+    }
+    .ul.dynatree-container{
+        background-color:  #eee;
+    }
+</style>

@@ -1,0 +1,132 @@
+<div class="header_line"></div>
+<div class="remind_editor">
+    <ul>
+        <li>
+            <div class="tit"><span>{{'drugname'|translate}}<span></div>
+            <div class="line"><input type="text" class="input_text" ng-model="data.name" placeholder="{{'addlifeTitle'|translate}}" /></div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit" style="line-height:3em;"><span>{{'drugstyle'|translate}}<span></div>
+            <div class="line shape">
+                <span ng-click="data.isXZ=0"><div class="{{$state.ycolor[data.isYS]}} iconfont">&#xe608;</div><i class="iconfont">&#xe621;</i></span>
+            </div>
+        </li>
+        <li>
+            <div class="tit" style="line-height:3em;"><span>{{'drugcolor'|translate}}</span></div>
+            <div class="line choose_color">
+                <span ng-click="data.isYS=0" class="bg_red"><i class="iconfont ng-hide"  ng-show="data.isYS==0">&#xe621;</i></span>
+                <span ng-click="data.isYS=1" class="bg_yellow"><i class="iconfont ng-hide" ng-show="data.isYS==1">&#xe621;</i></span>
+                <span ng-click="data.isYS=2" class="bg_blue"><i class="iconfont ng-hide" ng-show="data.isYS==2">&#xe621;</i></span>
+                <span ng-click="data.isYS=3" class="bg_green"><i class="iconfont ng-hide" ng-show="data.isYS==3">&#xe621;</i></span>
+                <span ng-click="data.isYS=4" class="bg_brown"><i class="iconfont ng-hide" ng-show="data.isYS==4">&#xe621;</i></span>
+                <span ng-click="data.isYS=5" class="bg_grey"><i class="iconfont ng-hide" ng-show="data.isYS==5">&#xe621;</i></span>
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit"><span>{{'drugtime'|translate}}</span></div>
+            <div class="line m_l">
+                <div ng-repeat="time in data.times" mobiscroll class="time">
+                    <div class="text" style="background-color:#398C99" >
+                        <input id="time{{time.index}}" name="time{{time.index}}" ng-model="time.value" class="boxinput time{{time.index}}" value="08:00" readonly>
+                    </div>
+                    <div class="sub"><span ng-click="deleteTime(time.index)"></span></div>
+                </div>
+
+                <div class="input_sub iconfont" ng-click="addTime()"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="tit"><span>{{'intervalday'|translate}}</span></div>
+            <div class="line m_l">
+                <div class="input_sub iconfont" ng-click="clickDec('jiange',1)"><span>&#xe612;</span></div>
+                <div class="text"><select ng-model="data.jiange" class="boxselect">
+                    <!--<option value="0">{{'nointerval'|translate}}</option>-->
+                    <option value="1">{{'oneday'|translate}}</option>
+                    <option value="2">{{'twoday'|translate}}</option>
+                    <option value="3">{{'threeday'|translate}}</option>
+                    <option value="4">{{'fourday'|translate}}</option>
+                    <option value="5">{{'fiveday'|translate}}</option>
+                    <option value="6">{{'sixday'|translate}}</option>
+                    <option value="7">{{'severday'|translate}}</option>
+                </select></div>
+                <div class="input_sub iconfont" ng-click="clickAdd('jiange',7)"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        <li class="remind_choose">
+            <div class="tit"><span>{{'Voice'|translate}}</span></div>
+            <div class="line m_l">
+                <div class="input_sub" ng-class="{on:data.isYY==0}" ng-click="data.isYY=0" style="width: 4.625em;"><i>{{'Synthesis'|translate}}</i></div>
+                <div class="input_sub m_c" ng-class="{on:data.isYY==1}" ng-click="data.isYY=1" style="width: 4.625em;"><i>{{'Recording'|translate}}</i></div>
+            </div>
+        </li>
+        <li ng-show="data.isYY==0">
+            <div class="tit"><span>{{'content'|translate}}</span></div>
+            <div class="line"><input type="text" class="input_text" ng-model="data.content" placeholder="{{'plsaddcontent'|translate}}" /></div>
+        </li>
+        <!--<li class="remind_choose">-->
+        <!--<div class="tit"><span>{{'method'|translate}}</span></div>-->
+        <!--<div class="line m_l">-->
+        <!--<div class="input_sub"  ng-class="{on:data.isf==0}" ng-click="clickF(0)"><i>{{'beforemeals'|translate}}</i></div>-->
+        <!--<div class="input_sub m_c" ng-class="{on:data.isf==1}" ng-click="clickF(1)"><i>{{'therice'|translate}}</i></div>-->
+        <!--<div class="input_sub" ng-class="{on:data.isf==2}" ng-click="clickF(2)"><i>{{'afterdinner'|translate}}</i></div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--<li class="remind_choose">-->
+        <!--<div class="tit"><span>{{'stoweposition'|translate}}</span></div>-->
+        <!--<div class="line m_l">-->
+        <!--<div class="input_sub" ng-class="{on:data.isK==0}" ng-click="clickK(0)"><i>{{'Macroporous'|translate}}</i></div>-->
+        <!--<div class="input_sub m_c" ng-class="{on:data.isK==1}" ng-click="clickK(1)"><i>{{'Holes'|translate}}</i></div>-->
+        <!--<div class="input_sub" ng-class="{on:data.isK==2}" ng-click="clickK(2)"><i>{{'External'|translate}}</i></div>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+</div>
+<div class="initialization_input initialization_h" ng-show="data.isYY==1" style="background:none;"><input type="button" class="bg_blue" ng-click="showCapture()" value="{{'record'|translate}}" /></div>
+
+<div class="initialization_input initialization_h" style="background:none;"><input type="button" ng-click="update('{{$state.messageid}}');" class="bg_blue" value="{{'save'|translate}}" /></div>
+
+<div class="public_input initialization_m" ng-show="data.edit==1">
+    <input type="submit"  class="bg_yellow" value="{{'stopalert'|translate}}" />
+    <input type="submit"  class="bg_yellow" value="{{'deletedrug'|translate}}" />
+</div>
+<style>
+    .remind_editor .input_text1{
+        color: #FFFFFF;
+        float: left;
+        font-size: 0.828125em;
+        width: 90%;
+        height: 2.5em;
+        line-height: 1.5em;
+        border: none;
+        background: none;
+        text-align: center;
+    }
+    .othercontainer {
+        margin-left: -1em;
+        width: 600px;
+        height:800px;
+        margin:20px auto;
+    }
+    .remind_editor .text{
+        float: left;
+        width: 3.8em;
+        height: 2em;
+        margin-right: 0.2em;
+        margin-top: 0.1em;
+        line-height: 2em;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .time{
+        float: left;
+        padding: 0.2em 0 0 0.2em;
+        position: relative;
+    }
+    .time .sub { position:absolute;  MARGIN-TOP: -0.2em;margin-left: -0.2em; width:1.03125em; height:1.03125em; background:#eb5135; border-radius:50%;}
+    .time .sub span { margin:0.421875em auto 0; width:0.625em; height:0.1875em; border-radius:0.1875em; background:#fff; display:block;}
+</style>
+<div class="nav_line"></div>

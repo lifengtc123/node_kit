@@ -1,0 +1,37 @@
+<div class="loginheader"></div>
+<div class="remind_editor">
+    <div class="titlogin"><img src="images/loginLogo.png"/></div>
+    </div>
+<form name="userForm" ng-submit="userlogin()">
+<div class="login_editor">
+
+    <ul>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em" ng-show="errorLogin">{{errorLogin}}</span>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em">{{errorPhone}}</span>
+        <li>
+            <div class="tit"><img src="images/loginphone.png"></div>
+            <div class="line "><input type="text" name="name"  class="input_text" ng-model="data.username" value="15258284638" placeholder="{{'Account'|translate}}"/></div>
+        </li>
+        <span class="help-block" style="color:#ff0000;font-size:0.651em;margin-left:2.4em">{{errorPassword}}</span>
+        <li>
+            <div class="tit"><img src="images/loginpwd.png"></div>
+            <div class="line"><input type="password" name="password" class="input_text" ng-model="data.password"value="1234" placeholder="{{'password'|translate}}"/></div>
+        </li>
+    </ul>
+</div>
+<div class="login_editor_input">
+    <input type="submit" style="background: #22b8b2!important;" value="{{'loginTitle'|translate}}" />
+</div>
+</form>
+<div class="reglogin">
+    <a style="color:#1d85e2" ui-sref="reg"><span class="left1"><span>{{'registerAccount'|translate}}</span></span></a>
+    <!--<a style="color:#1d85e2" ui-sref="forget(data.username)"><span class="right1">忘记密码</span></a>-->
+</div>
+<div class="otherlogin">
+    <span style="text-align: center;">{{'otherWay'|translate}}</span>
+    <div style="margin-top:0.5em"  ng-click="wxlogin()">
+    <img src="images/loginWXlogo.png" style="height:4em">
+    </div>
+</div>
+
+

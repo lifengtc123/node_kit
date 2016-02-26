@@ -1,0 +1,211 @@
+<div class="header_line"></div>
+
+<div class="remind_editor">
+    <ul>
+        <!--<li style="height: 5em"  ng-click="changeHeadImg()">-->
+        <li style="height: 5em">
+            <div class="tit" style="padding-top: 1.5em;">{{'txpic'|translate}}</div>
+            <div style="float: right;">
+            <div class="bangd" style="background:none;float:left;height:5em;padding-right: 0;">
+                <img ng-src="{{data.image}}" style="width:5em">
+            </div>
+            <div style="float: right;color: #8d8d8d;padding-right: 1em; padding-top: 2em;">
+            <i class="iconfont icof1"></i>
+            </div>
+            </div>
+        </li>
+    </ul>
+    <ul>
+
+        <li ng-click="wxbd()" >
+            <div class="tit">{{'weixin'|translate}}</div>
+            <div class="bangd" ng-show="data.openid&&data.unionid" style="background:none;">
+                <span>{{data.weixin}}</span> <i class="iconfont icof1">&#xe620;</i>
+            </div>
+            <div class="bangd" ng-show="!data.openid||!data.unionid" style="background:none;">
+                <span>{{'binding'|translate}}</span> <i class="iconfont icof1">&#xe620;</i>
+            </div>
+        </li>
+        <li ng-show="$state.username" >
+            <div class="tit">{{'telphone'|translate}}</div>
+            <div class="bangd"style="background:none;">
+                <span>{{$state.username}}</span><i class="iconfont icof1">&#xe620;</i>
+            </div>
+
+        </li>
+        <li ng-click="bduser()" ng-show="!$state.username">  
+            <div class="tit">{{'telphone'|translate}}</div>
+            <div class="bangd" style="background:none;">
+                <span>{{'bduser'|translate}} </span><i class="iconfont icof1">&#xe620;</i>
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li ng-click="changeuser()">
+            <div class="tit">{{'uname'|translate}}</div>
+            <!--<div class="line" >-->
+            <!--<input type="text" ng-model="data.name" class="input_text" placeholder="{{'username'|translate}}" />-->
+            <!--</div>-->
+            <div class="bangd" style="background:none;">
+                <input type="text" class="input_text" id="username" ng-model="data.name" style="text-align:right;" placeholder="{{'username'|translate}}"/><i class="iconfont icof1">&#xe620;</i>
+            </div>
+
+        </li>
+        <li>
+            <div class="tit">{{'sex'|translate}}</div>
+            <div class="bangd" ng-click="changesex()" ng-show="data.sex=='1'" style="background:none;">
+               {{'boy'|translate}}<i class="iconfont icof1">&#xe620;</i>
+            </div>
+            <div class="bangd" ng-click="changesex()" ng-show="data.sex=='2'" style="background:none;">
+               {{'girl'|translate}}<i class="iconfont icof1">&#xe620;</i>
+            </div>
+        </li>
+        <li ng-click="changeBirthday2()">
+            <div class="tit">{{'age'|translate}}</div>
+            <!--<div class="line">-->
+            <!--<div class="text1" >-->
+            <!--<input id="time" name="time" ng-model="data.age" class="boxinput time{{time.index}}"  placeholder="{{'chooseage'|translate}}"  value="" readonly>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="input_sub1 iconfont" ng-click="clickDec('age',1,addtime)"><span>&#xe612;</span></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="text1"><input class="age_text input_text " style="width:4em;" type="text" ng-model="data.age"/></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="input_sub1 iconfont" ng-click="clickAdd('age',150,addtime)"><span>&#xe61f;</span></div>&ndash;&gt;-->
+            <!--<i class="iconfont">&#xe620;</i>-->
+            <!--</div>-->
+            <div class="bangd" style="background:none;">
+                <input  id="time" name="time" class="boxinput time{{time.index}}" style="text-align:right;" ng-model="data.age" placeholder="{{'chooseage'|translate}}"/><i class="iconfont icof1">&#xe620;</i>
+            </div>
+        </li>
+    </ul>
+    <ul ng-show="data.area!=''&&data.area!=null">
+        <li>
+            <div class="tit">{{'area'|translate}}</div>
+            <!--<div class="line m_l">-->
+            <!--<input class="input_text area_text" type="text" ng-model="data.area" readonly="true"/>-->
+            <!--</div>-->
+            <div class="bangd" style="background:none;" ng-show="data.name">
+                {{data.area}} <!--<i class="iconfont icof1">&#xe620;</i>-->
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="initialization_input initialization_h" style="background:none;">
+    <input type="button" ng-click="layout();" class="bg_blue" value="{{'layout'|translate}}" />
+</div>
+
+<div class="initialization_invite_line user_line" ng-show="$state.bd">
+    <span style="float:left;padding-top:0.5em;font-size: 0.828125em;color:#aa0000" ng-show="error!=''">{{error}}</span>
+    <div class="line" style="margin-top:1.5em"><input type="text" name="name"  class="input_text" ng-model="data.username" placeholder="{{'Account'|translate}}"/></div>
+    <div class="line" style="margin-top:0.3em"><input type="password" name="password" class="input_text" ng-model="data.password"  placeholder="{{'password'|translate}}"/></div>
+    <input type="submit" class="input_submit" ng-click="bdvvbox()"  value="{{'bduser'|translate}}" />
+</div>
+
+
+
+
+<!--<div class="my_list my_list2" style="position:fixed;bottom:-6em;z-index: 1001;width:100%" id="changepic" ng-show="$state.openchange">-->
+    <!--<ul>-->
+        <!--<li ><div ng-click="capturePhoto()"><span>拍照</span></div></li>-->
+        <!--<li ><div ng-click="getPic()"><span>从手机相册选择</span></div></li>-->
+        <!--<li style="margin-top:0.5em"><div ng-click="closeDetail()"><span>取消</span></div></li>-->
+    <!--</ul>-->
+<!--</div>-->
+
+<style>
+
+    .my_list2 li{
+        text-align: center;
+        padding: 0;
+        line-height: 2.375em;
+        border-bottom: solid 0.1em #e9e9e9;
+        background: #fff;
+        overflow: hidden
+    }
+    .my_list2 span {
+        float: none;
+        color: #49617d;
+    }
+    .remind_editor li{
+        font-size: 0.8125em;
+    }
+
+    .remind_editor .tit {
+        float: left;
+        line-height: 2em;
+        padding-left: 0.9783em;
+        width:auto;
+    }
+    .remind_editor .input_text{
+        font-size: 1em;
+        width: auto;
+        border: none;
+        text-align: right;
+        padding-left:0;
+    }
+    .remind_editor .area_text{
+        border: none;
+    }
+    .remind_editor .input_sub1 {
+        float:left;
+        margin-top: 1em;
+        text-align:center;
+        color:#878787;
+    }
+    .remind_editor .text1 {
+        float: left;
+        line-height: 2em;
+        text-align: center;
+        color: #ffffff;
+        width: 7.835em;
+        margin-right: 1em;
+    }
+    #time{
+        color: #7a7a7a;
+    }
+    .remind_editor .text {
+        float: left;
+        width: 100%;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+        color: #878787;
+        margin-left: 0.5em;
+    }
+    select.boxselect {
+        border:0;
+        width: 10em;
+        font-size: 1em;
+        color: #878787;
+        /* text-align: right; */
+        background: none;
+       /* margin-left: 1em;*/
+        margin-right:-0.4em;
+        direction: rtl;
+    }
+     ul li select,
+     select option {
+       direction: rtl;
+    }
+    .bangd{
+        float: right;
+        /*margin:0.5625em 3.0714em 0 5.15217em;*/
+        height: 2.3125em;
+        line-height: 2.3125em;
+        text-align: center;
+        color: #8d8d8d;
+        background: #398c99;
+        border-radius: 0.2142em;
+        overflow: hidden;
+        padding-right: 1em;
+    }
+    .icof1{
+        padding-left: 1em;
+    }
+    input.boxinput{
+        width:auto;
+        text-align:right;
+    }
+   
+
+</style>
+
+<div class="nav_line"></div>

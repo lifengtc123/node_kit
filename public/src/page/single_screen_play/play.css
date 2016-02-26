@@ -1,0 +1,1330 @@
+.wrapWidth{
+	width: 960px;
+}
+.listBox .loading {
+	background:url('./imgs/cameraLoading.gif') 30px 7px no-repeat;
+	padding: 10px 30px 10px 63px;
+}
+/*.loadingIframe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1060;
+  max-width: 312px;
+  margin: -60px 0 0 -90px;
+  z-index: 100;
+  border: 0;
+  border-radius: 6px;
+}*/
+
+.maxW{
+	width:470px;
+        }
+.cloud_storage{
+	position:absolute;
+	background-color:#FFEEBE;
+	border:1px solid #D2D2D2;
+	width:732px;
+	top:-8px;
+	z-index:999;
+	font-size:12px;
+}
+.cloud_storage .active{
+	height:42px;
+}
+.cloud_storage .available{
+	 height:60px;
+	 /*line-height:5px;*/
+}
+.cloud_storage .active :first-child{
+   	line-height:42px;
+   	margin-left: 15px;
+   }
+.cloud_storage .available :first-child{
+   	margin-left: 15px;
+   }
+.cloud_storage .available b{
+   	line-height:42px;
+   	color:#2E9A11;
+   }
+.cloud_storage .available .get_more{
+   	color:#779DDF;
+   	text-decoration:none;
+   }
+.cloud_storage .active_ok{
+   width:94px;
+	top:9px;
+    background:url("./imgs/active_cloud_bg.png") center;
+ }
+.cloud_storage .available_ok{
+   width:130px;
+	top:19px;
+    background:url("./imgs/available_cloud_bg.png") no-repeat center;
+}
+ .cloud_storage .yun_storage_ok{
+   	position: absolute;
+	right: 46px;
+	color: #FFF;
+	text-decoration:none;
+	text-align: center;
+	line-height:16px;
+   	height:20px;
+   	padding-top: 5px;
+ }
+.active_close,.available_close{
+    position: absolute;
+	right: 6px;
+	top:6px;
+	background:url("./imgs/play_cloud_close.png") no-repeat center;
+	width:11px;
+	height:11px;
+ }
+.cloud_storage .available_ok.load,.cloud_storage .active_ok.load{
+        	background:url("./imgs/play_cloud_load.png") no-repeat center;
+        	padding-left: 20px;
+ }
+/* >>>>>>>>>>>>>>>>> monitor 实时视频 >>>>>>>>>>>>>>>>> */
+._videoBoxToggle {
+	margin-left: 110px;
+}
+.monitor ::-webkit-scrollbar-track-piece{
+    background-color:#fff;/*滚动条的背景颜色*/
+    -webkit-border-radius:0;/*滚动条的圆角宽度*/
+}
+
+.monitor ::-webkit-scrollbar{
+    width:10px;/*滚动条的宽度*/
+    height:8px;/*滚动条的高度*/
+}
+
+.monitor ::-webkit-scrollbar-thumb:vertical{/*垂直滚动条的样式*/
+    height:50px;
+    background-color:#999;
+    -webkit-border-radius:4px;
+    outline:2px solid #fff;
+    outline-offset:-2px;
+    border: 2px solid #fff;
+}
+.monitor ::-webkit-scrollbar-thumb:hover{/*滚动条的hover样式*/
+    height:50px;
+    background-color:#9f9f9f;
+    -webkit-border-radius:4px;
+}
+.monitor ::-webkit-scrollbar-thumb:horizontal{/*水平滚动条的样式*/
+    width: 5px;
+    background-color: #CCCCCC;
+    -webkit-border-radius: 6px;
+}
+
+.monitor .wrapper {
+}
+.monitor .noHWP {
+	width:100%;
+	height:30px;
+	text-align:center;
+	font-size: 28px;
+	color: gray;
+	display:block;
+	padding-top: 210px;
+}
+.monitor .preview {
+	width: 735px;
+	height: 594px;
+}
+.monitor .previewToggle {
+	width: 942px;
+}
+.monitor .listPanel {
+	float: right;
+	width: 220px;
+	height: 612px;
+	overflow: hidden;
+}
+.monitor .listPanel.monitor_list{
+	height:609px
+}
+.monitor .listPanel.monitor_list .content-PTZ{
+   height: 367px;
+}
+.monitor .listPanel.monitor_list .cl_list{
+	height: 270px;
+}
+.monitor .listPanel.replay_list{
+	height:765px
+}
+.monitor .listPanel.replay_local_list{
+	height:726px
+}
+.monitor .listPanelToggle {
+	margin-right: -242px;
+}
+.replay .listPanel {
+	height: 678px;
+}
+.monitor .preview .title {
+	width: 100%;
+	height: 30px;
+	background: #e1e1e1;
+	overflow:hidden;
+}
+.monitor .preview .title a{
+	color: #636363;
+	line-height:27px;
+	display:block;
+}
+.monitor .preview .title .name{
+	float: left;
+	margin-left:10px;
+	line-height: 30px;
+	font-size: 14px;
+	max-width: 700px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-decoration: none;
+}
+.monitor .preview .title .tabPanel{
+	float: left;
+	margin-left: 4px;
+	width:118px;
+	height:27px;
+	border:1px solid #c7c7c7;
+	background:#e5e5e5;
+	text-align:center;
+	margin-top:4px;
+	-moz-border-radius: 3px;      /* Gecko browsers */
+    -webkit-border-radius: 3px;   /* Webkit browsers */
+    border-radius:3px;            /* W3C syntax */
+    font-family:'Microsoft Yahei';
+}
+.monitor .preview .title .tabPanel.selected{
+	border-bottom:none;
+	font-weight:bold;
+	background:#fff;
+	height:35px;
+	height:32px\0;
+	color:#000;
+}
+.monitor .preview .winInstance {
+	width: 100%;
+	height: 568px;
+	background:#f7f7f7;
+	position: relative;
+}
+.monitor .preview .controlBar {
+	width: 100%;
+	height: 45px;
+	background-color: rgba(86,110,146,0);
+	border: solid 1px rgba(158,156,156,.32);
+	background-image: -webkit-linear-gradient(bottom, rgba(203,203,203,.91), rgba(234,234,234,.91) 68%, rgba(247,247,247,.91));
+	background-image: -moz-linear-gradient(bottom, rgba(203,203,203,.91), rgba(234,234,234,.91) 68%, rgba(247,247,247,.91));
+	background-image: -o-linear-gradient(bottom, rgba(203,203,203,.91), rgba(234,234,234,.91) 68%, rgba(247,247,247,.91));
+	background-image: -ms-linear-gradient(bottom, rgba(203,203,203,.91), rgba(234,234,234,.91) 68%, rgba(247,247,247,.91));
+	background-image: linear-gradient(to top, rgba(203,203,203,.91), rgba(234,234,234,.91) 68%, rgba(247,247,247,.91));
+}
+.monitor .listPanel{
+	position: relative;
+}
+.monitor .listPanel .showHide{
+	width: 15px;
+	background: url(../../page/single_screen_play/imgs/door.png) no-repeat 5px center #fff;
+	height: 100%;
+	cursor: pointer;
+}
+.monitor .listPanel .scrollBar {
+	/*width: 15px;*/
+	height: 100%;
+}
+.monitor .listPanel .list {
+	/*width: 228px;*/
+	width:218px;
+	border: 1px solid #d7d7d7;
+	background: url(../../page/single_screen_play/imgs/monitor.png) 0 -86px repeat-x #fff;
+}
+.monitor .listPanel .listBox {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 537px;
+    position: relative;
+}
+.replay .listPanel .listBox {
+	overflow-y: auto;
+	height: 623px;
+}
+.monitor .listPanel.replay_list .listBox{
+	height:732px
+}
+.monitor .listPanel.replay_local_list .listBox{
+	height:680px
+}
+.monitor .listPanel .title {
+	line-height: 30px;
+	padding-left: 15px;
+	height: 30px;
+	position: relative;
+	background: #e1e1e1;
+}
+.monitor .listPanel .title .refresh{
+	right: 2px;
+	top: 6px;
+}
+.monitor .listPanel .offline{
+    width: 188px;
+	height: 122px;
+	background: url(../../page/single_screen_play/imgs/unline.png) right top no-repeat;
+	display: none;
+	position: absolute;
+	cursor: pointer;
+	top: 0px;
+	left: 0px;
+}
+.monitor .listPanel .unline .offline{
+    display: block;
+}
+.monitor .listPanel .camera {
+	width: 188px;
+	height: 175px;
+	position: relative;
+	overflow: hidden;
+	margin:10px auto 0px;
+}
+.monitor .listPanel .isPlaying{
+	border: 1px solid #ff9988;
+	padding: 5px 5px 0px 5px;
+	height: 170px;
+	width: 174px;
+}
+.monitor .listPanel .unline.isPlaying .comeFromUser span{
+	color:#772100;
+}
+.monitor .listPanel .unline .comeFromUser span{
+	color:#5D5D5D;
+}
+.isIE .monitor .listPanel .isPlaying{
+	border: 1px solid #ff9988;
+	background: #dadada;
+}
+.monitor .listPanel .camera a.cameraInfo{
+	height: 169px;
+	width: 210px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+	border: 1px solid #f00;
+}
+.monitor .listPanel .camera a.play_state{
+	position: absolute;
+	background: url(../../page/single_screen_play/imgs/playState.png) no-repeat center;
+	display: block;
+	width: 201px;
+	height: 145px;
+	top: 10px;
+	left: 10px;
+}
+.monitor .listPanel .camera a.play_state:hover{
+	background: url(../../page/single_screen_play/imgs/playStateHover.png) no-repeat center;
+}
+.monitor .listPanel .isPlaying a.play_state{
+	background: url(../../page/single_screen_play/imgs/pauseState.png) no-repeat center;
+}
+.monitor .listPanel .isPlaying a.play_state:hover{
+	background: url(../../page/single_screen_play/imgs/pauseState.png) no-repeat center;
+}
+.monitor .listPanel .camera .pic {
+	width: 188px;
+	height: 122px;
+	cursor: pointer;
+}
+.monitor .listPanel .isPlaying .pic {
+    width: 174px;
+	height: 122px;
+}
+.monitor .listPanel .camera .name{
+	line-height: 16px;
+	color: #3f3f3f;
+	width: 172px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	margin-top: 10px;
+}
+.monitor .listPanel .camera a.name:hover{
+	color:#ee4300;
+	text-decoration:none;
+}
+.monitor .listPanel .camera.isPlaying .cameraConfigState {
+	top: 138px;
+	right: 13px;
+}
+.monitor .listPanel .camera .cameraConfigState {
+	top: 136px;
+	right: 11px;
+}
+.monitor .listPanel .isPlaying a.name{
+   color:#ee4300;
+   text-decoration:none;
+   margin-top:10px;
+   line-height:16px;
+}
+.monitor .listPanel .camera .status{
+	line-height: 24px;
+	color: #ec664f;
+	float: right;
+	visibility: hidden;
+}
+.monitor .listPanel .camera .status:hover {
+	text-decoration: none;
+}
+.monitor .listPanel .isPlaying .status{
+	visibility: visible;
+	display: none;
+}
+.monitor .preview .controlBar button{
+	width: 35px;
+	height: 35px;
+	border:none;
+	padding:0;
+	margin-top:5px;
+}
+/*云台控制*/
+
+.monitor  .list .controlPTZ,
+.monitor .content-PTZ{
+	display: none;
+}
+.monitor  .hasPTZ .controlPTZ{
+	display: block;
+}
+.monitor .hasPTZ .title{
+	padding-left: 0;
+}
+.monitor .hasPTZ .tab{
+	display: inline-block;
+	width: 107px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+}
+.monitor .hasPTZ span.t_active{
+	background-color: #fff;
+	color: #f04300;
+}
+.monitor .hasPTZ .content-PTZ{
+	height: 562px;
+	padding-top: 170px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#operate{
+	top: 52px;
+	left: 785px;
+	width: 130px;
+	height: 130px;
+	border: solid 1px #d7d7d7;
+	border-radius: 8px;
+	background:url("../../page/single_screen_play/imgs/ptzbg.png") repeat-x;
+	z-index: 9;
+	display: none;
+}
+#operate .goUp,
+#operate .goRight,
+#operate .goLeft,
+#operate .goDown{
+	width:0;
+	height: 0;
+	position: absolute;
+	border-style: solid;
+	border-width: 7px;
+	cursor: pointer;
+	background: none;
+}
+#operate .goUp{
+	border-color:transparent transparent #9c9c9c  transparent ;
+}
+#operate .goRight{
+	border-color: transparent #9c9c9c transparent transparent ;
+}
+#operate .goLeft{
+	border-color: transparent transparent transparent #9c9c9c ;
+}
+#operate .goDown{
+	border-color: #9c9c9c transparent transparent transparent ;
+}
+#operate .goUp:hover{
+	border-color: transparent transparent #f2672a transparent ;
+}
+#operate .goRight:hover{
+	border-color: transparent #f2672a transparent transparent ;
+}
+#operate .goLeft:hover{
+	border-color: transparent transparent transparent #f2672a ;
+}
+#operate .goDown:hover{
+	border-color: #f2672a transparent transparent transparent ;
+}
+#operate .goUp{
+	top:11px;
+	left: 58px;
+}
+#operate .goRight{
+	top:61px;
+	left:7px;
+}
+#operate .goLeft{
+	top:61px;
+	left: 110px;
+}
+#operate .goDown{
+	top:112px;
+	left: 58px;
+}
+#operate .goMirror{
+	display: block;
+	width: 55px;
+	height: 55px;
+	top:38px;
+	border: solid 1px #e6e6e6;
+	border-radius: 5px;
+	cursor: pointer;
+	background: url(../../page/single_screen_play/imgs/ptz_sprites.png) no-repeat 0 0;
+}
+#operate .goMirror:hover{
+	background-position: 0 -55px;
+}
+#operate.disabled  .goMirror{
+	cursor: inherit;
+	background-position: 0 -110px;
+}
+#operate.disabled .goUp{
+	cursor: inherit;
+	border-color: #d2d2d2 transparent transparent transparent ;
+}
+#operate.disabled .goRight{
+	cursor: inherit;
+	border-color: transparent #d2d2d2 transparent transparent ;
+}
+#operate.disabled .goLeft{
+	cursor: inherit;
+	border-color: transparent transparent transparent #d2d2d2 ;
+}
+#operate.disabled .goDown{
+	cursor: inherit;
+	border-color: transparent transparent #d2d2d2 transparent ;
+}
+.content-PTZ .sfar{
+	width:175px;
+	margin: 0 auto;
+	position: relative;
+}
+.content-PTZ .sfar .tips{
+	position: absolute;
+	width: 170px;
+	height: 40px;
+	line-height: 22px;
+	top: 30px;
+	background: #fff;
+	border: solid 1px #d5d5d5;
+	padding: 4px;
+	border-radius: 3px;
+	display: none;
+}
+.content-PTZ .sfar span{
+	height: 30px;
+	line-height: 30px;
+}
+.content-PTZ .sfar span:hover .tips{
+	display: block;
+}
+.content-PTZ .sfar .question{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-left: 2px;
+	margin-top: -2px;
+	vertical-align: middle;
+	background: url("../../../assets/images/icon20.png") no-repeat -20px -80px;
+}
+.icon-switch{
+	outline: none;
+	border:0;
+	height: 26px;
+	width: 55px;
+	background: url(../../common/imgs/camera/defend_toggle.png) no-repeat;
+	background-position: 0px -1px;
+}
+.icon-switch:hover {
+	background-position: 0px -36px;
+}
+.icon-switch:active {
+	background-position: 0px -71px;
+}
+.icon-switch {
+	background-position: 0px -1px;
+}
+.icon-switch:hover {
+	background-position: 0px -1px;
+}
+.icon-switch:active {
+	background-position: 0px -1px;
+}
+.icon-switch-close{
+	background-position: -72px -1px;
+}
+.icon-switch-close:hover{
+	background-position: -72px -36px;
+}
+.icon-switch-close:active{
+	background-position: -72px -71px;
+}
+.icon-switch-close.disabled{
+	background-position: -72px -1px;
+}
+.icon-switch-close.disabled:hover{
+	background-position: -72px -1px;
+}
+.icon-switch-close.disabled:active{
+	background-position: -72px -1px;
+}
+.content-PTZ .collectLocation{
+	width: 210px;
+	margin: 0 auto;
+	margin-top: 18px;
+	background-color: #f8f8f8;
+}
+.content-PTZ .collectLocation .tit{
+	height: 38px;
+	padding: 0 18px;
+	line-height: 38px;
+	background-color: #ededed;
+}
+.content-PTZ .collectLocation .add{
+	width: 22px;
+	height: 22px;
+	margin-top: 6px;
+	line-height: 19px;
+	border: solid 2px #d4d4d4;
+	font-size: 26px;
+	text-align: center;
+	background-color: #fff;
+	color: #98b38f;
+	overflow: hidden;
+}
+.content-PTZ .collectLocation .add:hover{
+	border:solid 2px #f8d0c4;
+}
+.content-PTZ .collectLocation .add.disabled{
+	color: #d9d9d9;
+}
+.content-PTZ .collectLocation .add.disabled:hover{
+	border-color:#d4d4d4;
+}
+.content-PTZ .cl_item{
+	width: 175px;
+	margin: 5px auto;
+	position: relative;
+}
+.content-PTZ .cl_item .reError {
+	line-height: 150%;
+	display: block;
+	color: #e13a0e;
+	clear: both;
+	text-align: center;
+	padding-top: 5px;
+}
+.content-PTZ .cl_list{
+	height:464px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.content-PTZ .cl_list .loadingImg{
+	background: url("./imgs/loading_32.gif") no-repeat center top;;
+	width: 40px;
+	height: 40px;
+	margin: -20px auto auto auto;
+	position: relative;
+	top: 50%;
+}
+.content-PTZ .empty_info{
+	margin:18px auto;
+	width: 160px;
+}
+.content-PTZ .empty_info h3{
+   color: #ff4605;
+	font-size: 13px;
+}
+.content-PTZ .empty_info p{
+	color: #999;
+	font-size: 12px;
+}
+.content-PTZ .cl_item img{
+	width: 175px;
+	height: 114px;
+	display: block;
+}
+.content-PTZ .cl_item .cover{
+	width:175px;
+	height: 114px;
+	cursor: pointer;
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	filter:alpha(opacity=30);       /* IE */
+	opacity: 0.3;
+}
+.content-PTZ .cl_item .del{
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	background: url(../../common/imgs/camera/cameraDetailIcon.png) no-repeat -350px -58px;
+}
+.content-PTZ .cl_item .del:hover{
+	background-position: -350px -28px;
+}
+.content-PTZ .cl_item .editing{
+	width: 120px;
+	text-indent: 6px;
+	float: left;
+	margin: 0;
+}
+.content-PTZ .cl_item .gray .editing {
+	color: #ccc;
+}
+.content-PTZ .camerName{
+	text-align: center;
+	margin-top: 5px;
+	text-indent: 6px;
+	height: 28px;
+	line-height: 28px;
+	overflow: hidden;
+}
+.content-PTZ .camerName span{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+	max-width: 110px;
+}
+.editName  {
+	background: url(../../page/single_screen_play/imgs/edit.png) no-repeat 0 2px;
+	line-height: 0;
+	width: 18px;
+	height: 28px;
+	display: inline-block;
+}
+.content-PTZ .cl_item .saveNewName {
+	float: left;
+	width: 40px;
+	height: 28px;
+	margin: 0;
+}
+.setLocationName {
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+.content-PTZ .cl_item:hover .cover,
+.content-PTZ .camerName,
+
+.content-PTZ .cl_item.disabled:hover .camerName{
+	display: block;
+}
+
+/*.content-PTZ .cl_item.disabled:hover .cover{
+	display: none;
+}*/
+
+/*播放暂停*/
+.monitor .controlBar .playNormal{
+	margin-left:15px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -210px;
+}
+.monitor .controlBar .playNormal:hover{
+	background-position: -55px -210px;
+}
+.monitor .controlBar .playNormal:active{
+	background-position: -90px -210px;
+}
+.monitor .controlBar .pauseNormal{
+	margin-left:15px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px 0px;
+}
+.monitor .controlBar .pauseNormal:hover{
+	background-position: -55px 0px;
+}
+.monitor .controlBar .pauseNormal:active{
+	background-position: -90px 0px;
+}
+/*截图*/
+.monitor .controlBar .captureNormal{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -35px;
+}
+.monitor .controlBar .captureNormal:hover{
+	background-position: -55px -35px;
+}
+.monitor .controlBar .captureNormal:active{
+	background-position: -90px -35px;
+}
+.monitor .controlBar .captureForbid{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -35px;
+}
+/*录像*/
+.monitor .controlBar .recordNormal{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -70px;
+}
+.monitor .controlBar .recordNormal:hover{
+	background-position: -55px -70px;
+}
+.monitor .controlBar .recordNormal:active{
+	background-position: -90px -70px;
+}
+.monitor .controlBar .recordForbid{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -70px;
+}
+.monitor .controlBar .recordingNormal{
+	width:122px;
+	height:33px;
+	color : #3c3c3c;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -315px;
+}
+.monitor .controlBar .recordingNormal:hover {
+	background-position: -20px -349px;
+	color : #b46558;
+}
+.monitor .controlBar .recordingNormal:active {
+	background-position: -20px -383px;
+}
+/*对讲*/
+.monitor .controlBar .voiceTalkNormal{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -105px;
+}
+.monitor .controlBar .voiceTalkNormal:hover{
+	background-position: -55px -105px;
+}
+.monitor .controlBar .voiceTalkNormal:active{
+	background-position: -90px -105px;
+}
+.monitor .controlBar .voiceTalkForbid{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -105px;
+}
+/*声音*/
+.monitor .controlBar .soundNormal{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -245px;
+}
+.monitor .controlBar .soundNormal:hover{
+	background-position: -55px -245px;
+}
+.monitor .controlBar .soundNormal:active{
+	background-position: -90px -245px;
+}
+.monitor .controlBar .soundingNormal{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -140px;
+}
+.monitor .controlBar .soundingNormal:hover{
+	background-position: -55px -140px;
+}
+.monitor .controlBar .soundingNormal:active{
+	background-position: -90px -140px;
+}
+.monitor .controlBar .soundForbid{
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -245px;
+}
+/*清晰度*/
+
+/*多画面*/
+.monitor .controlBar .multiWin{
+
+}
+.monitor .controlBar .btn-group{
+	float: right;
+}
+.monitor .controlBar .btn-group .dropdown-toggle {
+
+}
+.monitor .controlBar .btn-group .dropdown-toggle:hover {
+
+}
+.monitor .controlBar .btn-group .dropdown-toggle:active {
+
+}
+/*打开文件夹*/
+.monitor .controlBar .openFileDirNormal{
+	float:right;
+	margin-right:5px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -280px;
+}
+.monitor .controlBar .openFileDirNormal:hover{
+	background-position: -55px -280px;
+}
+.monitor .controlBar .openFileDirNormal:active{
+	background-position: -90px -280px;
+}
+.monitor .controlBar .openFileDirForbid {
+	float:right;
+	margin-right:5px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -280px;
+}
+
+
+/*全屏*/
+.monitor .controlBar .fullScreenNormal{
+	float:right;
+	margin-right:15px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -20px -175px;
+}
+.monitor .controlBar .fullScreenNormal:hover{
+	background-position: -55px -175px;
+}
+.monitor .controlBar .fullScreenNormal:active{
+	background-position: -90px -175px;
+}
+.monitor .controlBar .fullScreenForbid{
+	float:right;
+	margin-right:15px;
+	background:url("../../page/single_screen_play/imgs/monitor.png") -125px -175px;
+}
+.iframeBox {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+.loadingDOM {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width: 32px;
+	height: 32px;
+	background: url("../../page/single_screen_play/imgs/loading_32.gif");
+}
+
+/*********** replay ************/
+.replay ._tabPanel ._menu{
+	height: 37px;
+	border-bottom: 1px solid #e2e2e2;
+}
+.replay ._tabPanel ._menu ._item{
+	border: 1px solid #e2e2e2;
+	padding: 0 15px;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 4px;
+	background: #efefef;
+}
+.replay ._tabPanel ._menu ._current{
+	border: 1px solid #afafaf;
+	border-bottom: 1px solid #ffffff;
+	padding: 0 15px;
+	height: 37px;
+	line-height: 32px;
+	background: #fff;
+}
+/*********** cameraList ************/
+.lastAlarm li{
+	width: 204px;
+	height: 207px;
+	float: left;
+	padding: 13px;
+	border: 1px solid #eaeaea;
+	margin: 0 11px 10px 0;
+	background: url(../../page/single_screen_play/imgs/v2repeat.png) 0 -38px  repeat;
+}
+.lastAlarm li a.pic{
+	width: 204px;
+	height: 150px;
+	display: block;
+}
+.lastAlarm li a.pic img{
+	width: 220px;
+	height: 150px;
+}
+.lastAlarm li a.name{
+	color: #8b8b8b;
+	display: block;
+	margin-top: 22px;
+	height: 20px;
+	width: 204px;
+	line-height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.lastAlarm li tt{
+	color: #8b8b8b;
+}
+.cameraList .header {
+	height: 40px;
+	padding-top: 10px;
+}
+.cameraList .header h3, .cameraList .header h3 b {
+	font-weight: normal;
+}
+.cameraList .header .defend {
+	width:200px;
+	float:left;
+	color: #636363;
+}
+.cameraList .header .defend .result{
+	width:24px;
+	height: 24px;
+	float: right;
+	margin-left: 15px;
+}
+.cameraList .header .defend .loading{
+	background: url(../../common/imgs/loading_16.gif) 3px 3px no-repeat;
+}
+.cameraList .header .defend .warn{
+	background: url(../imgs/warn_24.png) no-repeat;
+	cursor: pointer;
+}
+.cameraList .header .defendOpen, .cameraList .header .defendClose {
+	width:81px;
+	height: 29px;
+	float:right;
+	text-decoration: none;
+	margin-top: 3px;
+	background: url(../imgs/defendClose.gif) no-repeat;
+}
+.cameraList .header .defendOpen{
+	background: url(../imgs/defendOpen.gif) no-repeat;
+}
+.cameraList .header .control {
+	width: 150px;
+	float: right;
+}
+.cameraList .header .control .dropdown{
+	float: right;
+}
+.cameraList .header .control .refresh{
+	position: absolute;
+	top: 12px;
+	right: 70px;
+	border: none;
+	padding: 0 0 0 5px;
+	text-decoration: none;
+	color: #5a5a5a;
+}
+.home .msgAll .refresh:hover{
+	text-decoration: none;
+}
+.cameraList .header .control .dropdown-toggle {
+	width: 65px;
+	height: 22px;
+	display: block;
+	line-height: 22px;
+	text-align: center;
+	padding-left: 5px;
+	color: gray;
+	background: url(../imgs/icon.png) no-repeat -16px -79px;
+}
+.cameraList .header .control .dropdown-toggle:hover{
+	text-decoration: none;
+}
+.cameraList .row4 .header .control .dropdown-toggle {
+	background-position : -16px -114px;
+}
+.cameraList .row2 .header .control .dropdown-toggle {
+	background-position : -16px -151px;
+}
+.cameraList .row3 .header .control .dropdown-toggle {
+	background-position : -16px -79px;
+}
+.cameraList .control ul {
+	width: 65px;
+	min-width: 65px;
+}
+.cameraList .dropdown-menu {
+	padding: 0px;
+}
+.cameraList .dropdown-menu a {
+	background: url(../imgs/icon.png) no-repeat;
+	padding: 3px 25px;
+}
+
+.cameraList .dropdown-menu .small{
+	background-position: -10px -113px;
+}
+.cameraList .dropdown-menu .small:hover {
+	background-position: -10px -205px;
+}
+.cameraList .dropdown-menu .middle{
+	background-position: -10px -77px;
+}
+.cameraList .dropdown-menu .middle:hover{
+	background-position: -10px -185px;
+}
+
+.cameraList .dropdown-menu .big {
+	background-position: -10px -150px;
+}
+
+.cameraList .dropdown-menu .big:hover {
+	background-position: -10px -222px;
+}
+.changeModel .gotoMore, .changeModel .gotoFull {
+display: block;
+color: #fff;
+background: url(../../page/single_screen_play/imgs/change_control.png) no-repeat;
+padding-left: 25px;
+}
+.refresh {
+position: absolute;
+background: url(../../page/single_screen_play/imgs/refresh.png) no-repeat 0 2px;
+border: none;
+text-decoration: none;
+width: 20px;
+height: 20px;
+}
+.refresh:hover{
+	background: url(../../page/single_screen_play/imgs/setting.png) -183px -183px no-repeat;
+}
+.refreshing{
+	background: url(../../common/imgs/loading_16.gif) no-repeat;
+}
+.refreshing:hover{
+	background: url(../../common/imgs/loading_16.gif) no-repeat;
+}
+.monitor .listPanel .title .refresh {
+right: 2px;
+top: 6px;
+}
+/*实时监控 截图微博分享*/
+#capturePicList{
+	display:block;
+	position: absolute;
+	background: #EFEFEF;
+	border:1px solid #E6E6E6;
+	top:0;
+	width:220px;
+	height:609px;
+	bottom:0px;
+	z-index:100;
+	overflow:hidden;
+
+
+}
+.replay_list #capturePicList{
+	height:765px
+}
+.replay_local_list #capturePicList{
+	height:726px
+}
+#capturePicList .con{
+	padding:5px;
+}#capturePicList .header{
+	padding-top:0;
+}
+#capturePicList h3{
+	font-size:14px;
+	text-indent: 10px;
+}
+#capturePicList .header button{
+	font-size:14px;
+	position:absolute;
+	right:5px;
+	top:5px;
+	border:0;
+	background:none;
+}
+#capturePicList #capturePicListBox{
+	padding:10px;
+	position: absolute;
+	top:40px;
+	right:10px;
+	left:10px;
+	bottom:10px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+
+#capturePicList #capturePicListBox img.share-pic{
+	width:210px;
+}
+html.isIE #capturePicList #capturePicListBox img.share-pic{
+	width:200px;
+}
+
+#capturePicList .img-container{
+	position: relative;
+	margin:0 0 20px 0;
+}
+#capturePicList .img-toolbar{
+	position: absolute;
+	bottom:0;
+	left: 0;
+	right:0;
+	height:25px;
+	padding:3px;
+	background: #333;
+	background: rgba(0,0,0,.7);
+	text-align:right;
+	display:none;
+}
+#capturePicList .img-toolbar span.title{
+	position: absolute;
+	left:5px;
+	top:0;
+	color:#aaa;
+	background: none;
+}
+#capturePicList .img-toolbar button{
+	border:0;
+	background: none;
+}
+/*视频播放&多画面*/
+.video_navigator{
+	margin-top:3px;
+}
+
+.navigator_title{
+	height:33px;
+	overflow:hidden;
+	line-height:21px;
+}
+
+.navigator_title .title{
+	float:left;
+}
+
+.navigator_title .title a{
+	color:#000;
+}
+
+.changeModel{
+	float:right;
+	margin-right: 224px;
+}
+.changeModel a,.changeModel a:hover,.changeModel a:active{
+	display: block;
+	background: url(../../../src/business/play_component/imgs/player.png) no-repeat -158px -780px;
+	width: 166px;
+	height: 20px;
+	overflow: hidden;
+	padding: 4px 0 0 20px;
+	line-height: 15px;
+}
+.changeModel a:hover{
+	text-decoration:none;
+	background:url(../../../src/business/play_component/imgs/player.png) no-repeat -158px -815px;
+}
+.changeModel a:active{
+	background:url(../../../src/business/play_component/imgs/player.png) no-repeat -158px -848px;
+}
+.camera .comeFromUser{
+	line-height:16px;
+	margin-bottom:10px;
+	color:#B7B7B7;
+}
+.monitor .listPanel .isPlaying p.comeFromUser{
+   color:#ee4300;
+}
+.monitor .preview .winInstance {
+width: 100%;
+height: 568px;
+background: #f7f7f7;
+position: relative;
+}
+.videoShare{
+	float: right;
+	margin-right: 6px;
+}
+.camera .pic_error{
+	background: url(../../../src/common/imgs/public/companyDevice_web.jpeg ) no-repeat center center;
+}
+.xclose{
+	margin-top: 2px;
+	background: none repeat scroll !--0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
+    color: #000000;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+    opacity: 0.2;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+.xclose:hover{
+	color: #000000;
+	cursor: pointer;
+	opacity: 0.4;
+	text-decoration: none;
+ }
+  #cameraSingleKeyForm up\:prompt.up_prompt_warn_nored{
+      margin-left:110px;
+ }
+ .monitor .muliti_maxW{
+ 	width:550px;
+	max-width:550px;
+ }
+ .picPwdChkBack,
+ .remote_randcode{
+ 	color: #3b8eff;
+	cursor: pointer;
+	margin-right: 22px;
+	position: absolute;
+	right: 10px;
+	bottom: 12px;
+ }
+  .picPwdChkBack:hover,
+ .remote_randcode:hover{
+ 	color: #005580;
+ 	text-decoration: underline;
+ }
+ .showMobileKeyBtnBox,
+ .showPwdDialogBtnBox{
+ 	position: absolute;
+	right: 10px;
+	bottom:20px;
+ }
+ .remote_randcode:hover {
+	color: #005580;
+	text-decoration: underline;
+ }
+ .getMobileKeyCodeBox{
+	padding-top:5px;
+ }
+ .getMobileKeyCodeBox .phoneNumberBox,
+ .getMobileKeyCodeBox .getMobileKeyCode{
+ 	display:inline-block;
+ 	float: left;
+ }
+ .getMobileKeyCodeBox .getMobileKeyCode[data-btn="false"]{
+ 	width:100px;
+ 	background:#c3c3c3;
+ 	color:#fff;
+ 	text-shadow: none;
+ }
+ .getMobileKeyCodeBox .getMobileKeyCode[data-btn="true"]{
+ 	width:100px;
+ 	background:#ff5a00;
+ 	color:#fff;
+ 	text-shadow: none;
+ }
+ .inputTip,
+ .phoneNumber{
+ 	line-height: 28px;
+ 	float:left;
+ }
+ .phoneNumber{
+ 	width:100px;
+ 	margin-right:10px;
+ }
+ .passErrorPrompt{
+ 	color: #e1593b;
+	padding-left: 22px;
+	background: url(../../../../src%20old1/widget/dialog/src/imgs/icon.png) no-repeat -13px -9px;
+	display: none;
+	line-height: 19px;
+	overflow: hidden;
+	height: 19px;
+	margin-left:50px;
+ }

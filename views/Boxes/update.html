@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="/boxes/updateOK" method="post">
+    要更新的设备编号:<input name="box[number]"/>
+    要更新的固件版本:<input id="updatebb" name="box[updatebb]"/>
+    <br>
+    <button>确定</button>
+    <br>
+    <a href="javascript:;" onclick="updateAll(1)" >更新全部盒子</a>
+    <br>
+    <a href="javascript:;"  onclick="updateAll(0)">取消更新全部盒子</a>
+</form>
+<script>
+	function updateAll(state){
+		location.href="/boxes/updateAll?state="+state+"&updatebb="+document.getElementById("updatebb").value
+	}
+</script>
+</body>
+</html>

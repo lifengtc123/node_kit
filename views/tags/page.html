@@ -1,0 +1,12 @@
+<div class="dataTables_info">显示第<span><%= (pagedlist.pageNumber-1)*pagedlist.pageSize+1 %></span> 列到第<span><%= (pagedlist.pageNumber-1)*pagedlist.pageSize+parseInt(pagedlist.pageSize)%></span>列 共 <span><%=pagedlist.rowCount%></span> 列</div>
+
+<div class="dataTables_paginate paging_full_numbers">
+    <a tabindex="0" href="<%= pagedlist.getCallbackURL(1)%>" class="first paginate_button paginate_button_disabled">首页</a>
+    <% if(pagedlist.pageNumber!=1){ %>
+    <a tabindex="0" href="<%= pagedlist.getCallbackURL(pagedlist.pageNumber-1)%>" class="previous paginate_button paginate_button_disabled">上一页</a>
+    <%}%>
+    <% if(pagedlist.pageNumber!=pagedlist.pageCount){ %>
+    <a tabindex="0" href="<%= pagedlist.getCallbackURL(pagedlist.pageNumber+1)%>" class="next paginate_button" >下一页</a>
+    <%}%>
+    <a tabindex="0" href="<%= pagedlist.getCallbackURL(pagedlist.pageCount)%>" class="last paginate_button">尾页</a>
+</div>

@@ -1,0 +1,222 @@
+<div class="header_line"></div>
+<input type="hidden" id="showCapture" value="" />
+<div ng-repeat="box in $state.homeboxs | orderBy:'-time'" class="swipe-delete">
+    <div  class="remind_list1 mybox_h  remind_editor1">
+        <a class="movedelete2" style="margin-top: 1.25em;" ng-click="deleteBox('{{box.number}}')"><img style="width:3em" src="images/delete.png"></a>
+    </div>
+    <div class="remind_list mybox_h remind-top"  swipe-over2="{{box.number}}">
+        <!--<a ng-click="showinfo($event,'{{box.number}}')" ng-model="type">-->
+        <div class="mybox_pic" ng-if="box.online==1"><img src="images/huide.png" /><div class="sub"><span></span></div></div>
+        <div class="mybox_pic" ng-if="box.online==0"><img src="{{box.image}}" /><div class="sub"><span></span></div></div>
+        <!--</a>-->
+        <div class="mybox_tit">{{box.name}}</div>
+        <div class="mybox_con">
+            <i>{{'drugHabit' |translate}}</i>
+            <strong style="font-size:0.8em;color:#398c99" ng-show="box.percent>=80">{{box.percent}}%</strong>
+            <strong style="font-size:0.8em;color:#ffb033" ng-show="box.percent<80&&box.percent>=60">{{box.percent}}%</strong>
+            <strong style="font-size:0.8em;color:#eb5135" ng-show="box.percent<60">{{box.percent}}%</strong>
+            <span class="iconfont font_blue" ng-show="box.percent>=80">&#xe600;</span>
+            <span class="iconfont font_y" ng-show="box.percent<80&&box.percent>=60">&#xe601;</span>
+            <span class="iconfont font_red" ng-show="box.percent<60">&#xe602;</span>
+        </div>
+        <div class="mybox_con">
+            <i>{{'temp'|translate}}</i>
+            <strong style="font-size:0.8em;color:#eb5135" ng-show="box.temp>=30">{{box.temp}}%</strong>
+            <strong style="font-size:0.8em;color:#ffb033" ng-show="box.temp<30&&box.temp>=24">{{box.temp}}℃</strong>
+            <strong style="font-size:0.8em;color:#398c99" ng-show="box.temp<24">{{box.temp}}%</strong>
+            <span class="iconfont " ng-show="box.temp>=30"><img style="height:0.8em" src="images/temp_red.png"/></span>
+            <span class="iconfont"ng-show="box.temp<30&&box.percent>=24"><img style="height:0.8em" src="images/temp_yellow.png"/></span>
+            <span class="iconfont" ng-show="box.temp<24"><img  style="height:0.8em" src="images/temp_blue.png"/></span>
+        </div>
+
+        <a class="mybox_talk input_talk talk2" ng-model="type" ng-click="showCapture($event,box.number)">
+            <img class="showCapture" src="images/microphone2.png">
+        </a>
+    </div>
+    <div ng-show="box.message.length>0&&box.message!=null">
+        <div class="homeswiper_{{box.number}} swiper-container">
+            <div class="mybox_progress_tit">{{'todayDegree' |translate }}</div>
+            <div class="swiper-scrollbar_{{box.number}}"></div>
+            <div class="swiper-wrapper mybox_progress box-scroll" style="width:{{box.linesize}}%; z-index:{{open}}">
+                <div class="line" style="width:{{box.linewidth}}%"></div>
+                <div class="swiper-slide box—swiper" ng-repeat="message in box.message" swiper-slide="{{message.boxNumber}}"  ng-style="{width:box.message.length!=($index+1)?box.sumwidth+'%':'0%'}">
+                    <div class="bg on" ng-if="message.isEat!=0&&message.isEat!=8"></div>
+                    <span>{{box.slidenum}}</span>
+                    <div class="bg off" ng-if="(message.isEat==0||message.isEat==8)&&box.slidenum>=$index"></div>
+                    <div class="bg" ng-if="box.slidenum<$index"></div>
+                    <div class="mybox_content input_content ">
+                        <a ng-click="openDetail('{{message._id}}','{{message.time}}')" ng-switch on="{{message.type}}">
+                            <div ng-switch-when="0" ng-switch on="{{message.style}}">
+                                <span class="icon1" ng-switch-when="0"><div class="iconfont {{ycolor[message.color]}} iconleft" >&#xe624;</div><div class="iconfont yw_while iconright">&#xe625;</div></span>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe626;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe627;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="3">&#xe628;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="4">&#xe629;</em>
+                            </div>
+                            <div ng-switch-when="1" ng-switch on="{{message.style}}">
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="0">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe608;</em>
+                            </div>
+                        </a>
+                        <div class="text font_on" ng-if="message.isEat!=0&&message.isEat!=8"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                        <div class="text font_off" ng-if="(message.isEat==0||message.isEat==8)&&box.slidenum>=$index"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                        <div class="text font_other"ng-if="box.slidenum<$index"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                    </div>
+                    <div class="mybox_content input_content ">
+                        <a ng-click="openDetail('{{message._id}}','{{message.time}}')" ng-switch on="{{message.type}}">
+                            <div ng-switch-when="0" ng-switch on="{{message.style}}">
+                                <span  class="icon1" ng-switch-when="0"><div class="iconfont {{ycolor[message.color]}} iconleft">&#xe624;</div><div class="iconfont yw_while iconright">&#xe625;</div></span>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe626;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe627;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="3">&#xe628;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="4">&#xe629;</em>
+                            </div>
+                            <div ng-switch-when="1" ng-switch on="{{message.style}}">
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="0">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe608;</em>
+                            </div>
+                        </a>
+                        <div class="text font_on" ng-if="message.isEat!=0&&message.isEat!=8"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                        <div class="text font_off" ng-if="(message.isEat==0||message.isEat==8)&&box.slidenum>=$index"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                        <div class="text font_other" ng-if="box.slidenum<$index"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="swiper-container">
+       <div class="people_number"><img style="height: 1em" src="images/jingguo.png"/>
+           <span style="padding-left:0.5em;padding-right:0.5em">{{'passtitle'|translate}}</span>{{box.hwxNo}}<span style="padding-left:0.5em">{{'times'|translate}}</span>
+       </div>
+    </div>
+</div>
+</div>
+<div class="remind_list">
+    <a  ui-sref="addbox"><div class="add"><span class="iconfont">&#xe61f;</span><i>{{'addNewBox'|translate}}</i></div></a>
+</div>
+
+<div class="nav_line"></div>
+<div class="box_info_list" ng-show="$state.infolist"  ng-click="closeDetail()">
+    <ul ng-show="$state.type==0">
+        <li>
+            <strong>
+                <div  class="icon1" ng-if="$state.drugstyle==0">
+                    <div class="iconfont {{ycolor[$state.color]}} iconleft">&#xe624;</div>
+                    <div class="iconfont yw_while iconright">&#xe625;</div>
+                </div>
+                <em ng-if="$state.drugstyle==1" class="iconfont {{ycolor[$state.color]}} icon2">&#xe626;</em>
+                <em ng-if="$state.drugstyle==2" class="iconfont {{ycolor[$state.color]}} icon2">&#xe627;</em>
+                <em ng-if="$state.drugstyle==3" class="iconfont {{ycolor[$state.color]}} icon2">&#xe628;</em>
+                <em ng-if="$state.drugstyle==4" class="iconfont {{ycolor[$state.color]}} icon2">&#xe629;</em>
+                <em ng-if="$state.drugstyle==5" class="iconfont {{ycolor[$state.color]}} icon2">&#xe629;</em>
+                {{$state.drugName}}
+            </strong>
+        </li>
+        <li><span>{{'drugTime'|translate}}</span><i>{{$state.drugTime}}</i></li>
+        <li><span>{{'dosage'|translate}}</span>
+            <i ng-if="$state.ywNo=='1'">{{'oncetime'|translate}}{{'onepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='2'">{{'oncetime'|translate}}{{'twopiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='3'">{{'oncetime'|translate}}{{'threepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='4'">{{'oncetime'|translate}}{{'fourpiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='5'">{{'oncetime'|translate}}{{'fivepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='6'">{{'oncetime'|translate}}{{'sixpiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='7'">{{'oncetime'|translate}}{{'severpiece'|translate}}</i>
+        </li>
+        <li><span>{{'takeWay'|translate}}</span>
+            <i ng-if="$state.isf=='0'">{{'beforemeals'|translate}}</i>
+            <i ng-if="$state.isf=='1'">{{'therice'|translate}}</i>
+            <i ng-if="$state.isf=='2'">{{'afterdinner'|translate}}</i>
+        </li>
+        <li><span>{{'takeCase'|translate}}</span>
+            <i ng-if="$state.isEat=='0'">{{'weifu'|translate}}</i>
+            <i ng-if="$state.isEat=='1'">{{'eated'|translate}}</i>
+            <i ng-if="$state.isEat=='2'">{{'eated'|translate}}</i>
+            <i ng-if="$state.isEat=='4'">{{'eated'|translate}}</i>
+            <i ng-if="$state.isEat=='8'">{{'weifu'|translate}}</i>
+        </li>
+
+    </ul>
+    <ul ng-show="$state.type==1">
+        <li>
+            <strong>
+                <em class="iconfont {{ycolor[$state.color]}} icon2">&#xe608;</em>
+                {{$state.drugName}}
+            </strong>
+        </li>
+        <li><span>{{'alertTime'|translate}}</span><i>{{$state.drugTime}}</i></li>
+        <li><span>{{'content'|translate}}</span>
+            <i>{{$state.content}}</i>
+        </li>
+    </ul>
+</div>
+<style>
+    .box—swiper {
+        height: 4em;
+        margin-right: auto;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-flex-shrink: 0;
+        -ms-flex: 0 0 auto;
+        flex-shrink: 0;
+        position: relative
+    }
+    .mybox_progress .mybox_content em {
+        margin: 20% auto -1em;
+    }
+    .mybox_progress .off { background:#f7ba5b;}
+    .mybox_progress .on { background:#398c99;}
+    .font_on{
+        color: #398c99!important;
+    }
+    .font_off{
+        color: #f7ba5b!important;
+    }
+    .font_other{
+        color: #a5a7ad!important;
+    }
+    .mybox_progress{
+        height:0.421875em;
+        background:#d2d2d2;
+        box-shadow:0 0.0625em 0.1875em #999 inset;
+        -moz-box-shadow:0 0.0625em 0.1875em #999 inset;
+        -webkit-box-shadow:0 0.0625em 0.1875em #999 inset;
+    }
+    .box-scroll .ne{
+        background:#E8E8E8;
+    }
+    .swiper-container {
+        background: #fff;
+        border-bottom: solid 0.1em #e2e2e2;
+    }
+    .remind_list {
+        border-top: solid 0.1em #e2e2e2;
+        border-bottom: solid 0.1em #e2e2e2;
+
+    }
+    .mybox_con i {
+        float: left;
+        color: #a0a0a0;
+        font-style: normal;
+        font-size: 0.612em;
+    }
+    .remind-top {
+        margin-top: -6.12em;
+    }
+    .remind_editor1{
+        margin-top: 0.53125em;
+        border-top: solid 0.1em #e2e2e2;
+        border-bottom: solid 0.1em #e2e2e2;
+    }
+</style>
+<div class="talk_box">
+    <div class="text"><span class="iconfont">&#xe611;</span></div>
+    <div class="font">{{'cliketake'|translate}}</div>
+</div>
+<div class="mask"></div>
+

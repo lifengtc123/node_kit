@@ -1,0 +1,154 @@
+<div class="header_line"></div>
+<div ng-repeat="box in $state.homeboxs | orderBy:'-time'" class="swipe-delete">
+    <div  class="remind_list1 mybox_h  remind_editor1" style="margin-top: 0.53125em; border-bottom: solid 0.037em #e2e2e2;">
+        <a class="movedelete2" style="margin-top: 1.25em;" ng-click="deleteBox('{{box.number}}')"><img src="images/delete.png"></a>
+    </div>
+    <div class="remind_list mybox_h remind-top"  swipe-over2="{{box.number}}">
+      <a ng-click="showinfo($event,'{{box.number}}')" ng-model="type"><div class="mybox_pic" ><img src="{{box.image}}" /><div class="sub"><span></span></div></div> </a>
+      <div class="mybox_tit">{{box.name}}</div>
+        <div class="mybox_con">
+        <i>{{'drugHabit' |translate}}</i>
+        <strong>{{box.percent}}%</strong>
+        <span class="iconfont" ng-show="box.percent>=80">&#xe600;</span>
+        <span class="iconfont" ng-show="box.percent<0.8&&box.percent>=60">&#xe601;</span>
+        <span class="iconfont" ng-show="box.percent<60">&#xe602;</span>
+        </div>
+
+        <a class="mybox_talk input_talk talk2" ng-model="type" ng-click="showCapture($event,box.number)">
+        <img src="images/microphone2.png">
+        </a>
+    </div>
+    <div ng-show="box.message.length>0&&box.message!=null">
+    <div class="swiper-container homeswiper">
+        <div class="mybox_progress_tit">{{'todayDegree' |translate }}</div>
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-wrapper mybox_progress box-scroll" style="width:{{box.linesize}}%; z-index:{{open}}">
+                <div class="line" style="width:{{box.linewidth}}%"></div>
+                    <div class="swiper-slide box—swiper" ng-repeat="message in box.message" swiper-slide  ng-style="{width:box.message.length!=($index+1)?box.sumwidth+'%':'0%'}">
+                    <div class="bg"></div>
+                    <div class="mybox_content input_content" ng-if="box.slidenum<$index">
+                        <a ng-click="openDetail('{{message._id}}','{{message.time}}')" ng-switch on="{{message.type}}">
+                            <div ng-switch-when="0" ng-switch on="{{message.style}}">
+                                <span class="icon1" ng-switch-when="0"><div class="iconfont {{ycolor[message.color]}} iconleft" >&#xe624;</div><div class="iconfont yw_while iconright">&#xe625;</div></span>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe626;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe627;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="3">&#xe628;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="4">&#xe629;</em>
+                            </div>
+                            <div ng-switch-when="1" ng-switch on="{{message.style}}">
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="0">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe608;</em>
+                            </div>
+                        </a>
+                        <div class="text font_red"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                    </div>
+                    <div class="mybox_content input_content on" ng-if="box.slidenum>=$index">
+                        <a ng-click="openDetail('{{message._id}}','{{message.time}}')" ng-switch on="{{message.type}}">
+                            <div ng-switch-when="0" ng-switch on="{{message.style}}">
+                                <span  class="icon1" ng-switch-when="0"><div class="iconfont {{ycolor[message.color]}} iconleft">&#xe624;</div><div class="iconfont yw_while iconright">&#xe625;</div></span>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe626;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe627;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="3">&#xe628;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="4">&#xe629;</em>
+                            </div>
+                            <div ng-switch-when="1" ng-switch on="{{message.style}}">
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="0">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1">&#xe608;</em>
+                                <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2">&#xe608;</em>
+                            </div>
+                        </a>
+                        <div class="text font_red"><span class="iconfont">&#xe61a;</span><i>{{message.time}}</i></div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+<div class="remind_list">
+    <a  ui-sref="addbox"><div class="add"><span class="iconfont">&#xe61f;</span><i>{{'addNewBox'|translate}}</i></div></a>
+</div>
+
+<div class="nav_line"></div>
+<div class="box_info_list" ng-show="$state.infolist"  ng-click="closeDetail()">
+    <ul ng-show="$state.type==0">
+        <li>
+            <strong>
+             <div  class="icon1" ng-if="$state.drugstyle==0">
+                <div class="iconfont {{ycolor[$state.color]}} iconleft">&#xe624;</div>
+                <div class="iconfont yw_while iconright">&#xe625;</div>
+             </div>
+            <em ng-if="$state.drugstyle==1" class="iconfont {{ycolor[$state.color]}} icon2">&#xe626;</em>
+            <em ng-if="$state.drugstyle==2" class="iconfont {{ycolor[$state.color]}} icon2">&#xe627;</em>
+            <em ng-if="$state.drugstyle==3" class="iconfont {{ycolor[$state.color]}} icon2">&#xe628;</em>
+            <em ng-if="$state.drugstyle==4" class="iconfont {{ycolor[$state.color]}} icon2">&#xe629;</em>
+            <em ng-if="$state.drugstyle==5" class="iconfont {{ycolor[$state.color]}} icon2">&#xe629;</em>
+            {{$state.drugName}}
+            </strong>
+        </li>
+        <li><span>{{'drugTime'|translate}}</span><i>{{$state.drugTime}}</i></li>
+        <li><span>{{'dosage'|translate}}</span>
+            <i ng-if="$state.ywNo=='1'">{{'oncetime'|translate}}{{'onepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='2'">{{'oncetime'|translate}}{{'twopiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='3'">{{'oncetime'|translate}}{{'threepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='4'">{{'oncetime'|translate}}{{'fourpiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='5'">{{'oncetime'|translate}}{{'fivepiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='6'">{{'oncetime'|translate}}{{'sixpiece'|translate}}</i>
+            <i ng-if="$state.ywNo=='7'">{{'oncetime'|translate}}{{'severpiece'|translate}}</i>
+        </li>
+        <li><span>{{'takeWay'|translate}}</span>
+            <i ng-if="$state.isf=='0'">{{'beforemeals'|translate}}</i>
+            <i ng-if="$state.isf=='1'">{{'therice'|translate}}</i>
+            <i ng-if="$state.isf=='2'">{{'afterdinner'|translate}}</i>
+        </li>
+        <li><span>{{'takeCase'|translate}}</span>
+            <i ng-if="$state.isEat=='0'">{{'weifu'|translate}}</i>
+            <i ng-if="$state.isEat=='1'">{{'Taken'|translate}}</i>
+            <i ng-if="$state.isEat=='2'">{{'Taken'|translate}}</i>
+            <i ng-if="$state.isEat=='4'">{{'Taken'|translate}}</i>
+            <i ng-if="$state.isEat=='8'">{{'weifu'|translate}}</i>
+        </li>
+
+    </ul>
+    <ul ng-show="$state.type==1">
+        <li>
+            <strong>
+                <em class="iconfont {{ycolor[$state.color]}} icon2">&#xe608;</em>
+                {{$state.drugName}}
+            </strong>
+        </li>
+        <li><span>{{'alertTime'|translate}}</span><i>{{$state.drugTime}}</i></li>
+        <li><span>{{'content'|translate}}</span>
+         <i>{{$state.content}}</i>
+        </li>
+    </ul>
+</div>
+<style>
+.box—swiper {
+    height: 4em;
+    margin-right: auto;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    position: relative
+}
+.mybox_progress{
+    height:0.421875em;
+    background:#d2d2d2;
+    box-shadow:0 0.0625em 0.1875em #999 inset;
+    -moz-box-shadow:0 0.0625em 0.1875em #999 inset;
+    -webkit-box-shadow:0 0.0625em 0.1875em #999 inset;
+}
+</style>
+<div class="talk_box">
+    <div class="text"><span class="iconfont">&#xe611;</span></div>
+    <div class="font">{{'cliketake'|translate}}</div>
+</div>
+<div class="mask"></div>
+

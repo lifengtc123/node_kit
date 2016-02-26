@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<title>移动医疗</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/iconfont/iconfont.css">
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script src="js/myjq.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div class="header_bg">
+    <div class="header">
+        <div class="header_back iconfont"><a onclick="javascript:history.go(-1);">&#xe614;</a></div>
+        <div class="header_tit">用药编辑</div>
+        <div class="header_save"><a href="#">扫一扫</a></div>
+    </div>
+</div>
+<div class="header_line"></div>
+
+<div class="remind_editor">
+	<ul>
+    	<li>
+        	<div class="tit"><span>名称<span></div>
+            <div class="line"><input type="text" class="input_text" placeholder="请输入药物名称" /></div>
+        </li>
+    </ul>
+    <ul>
+    	<li>
+        	<div class="tit" style="line-height:3em;"><span>形状<span></div>
+            <div class="line shape">
+            	<span><img src="images/remind_red.png" /><i class="iconfont">&#xe621;</i></span>
+                <span><img src="images/remind_round.png" /></span>
+                <span><img src="images/remind_ellipse.png" /></span>
+                <span><img src="images/remind_positive.png" /></span>
+                <span><img src="images/remind_long.png" /></span>
+            </div>
+        </li>
+        <li>
+        	<div class="tit" style="line-height:3em;"><span>颜色</span></div>
+            <div class="line choose_color">
+            	<span class="bg_red"><i class="iconfont">&#xe621;</i></span>
+                <span class="bg_yellow"></span>
+                <span class="bg_blue"></span>
+                <span class="bg_green"></span>
+                <span class="bg_brown"></span>
+                <span class="bg_grey"></span>
+            </div>
+        </li>
+    </ul>
+    <ul>
+    	<li>
+        	<div class="tit"><span>次数</span></div>
+            <div class="line m_l">
+            	<div class="input_sub iconfont"><span>&#xe612;</span></div>
+                <div class="text"><span>一天两次</span></div>
+                <div class="input_sub iconfont"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        <li>
+        	<div class="tit"><span>时间1</span></div>
+            <div class="line m_l">
+            	<div class="input_sub iconfont"><span>&#xe612;</span></div>
+                <div class="text">8:00</div>
+                <div class="input_sub iconfont"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        <li>
+        	<div class="tit"><span>时间2</span></div>
+            <div class="line m_l">
+            	<div class="input_sub iconfont"><span>&#xe612;</span></div>
+                <div class="text">12:00</div>
+                <div class="input_sub iconfont"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        
+    	<li>
+        	<div class="tit"><span>每次</span></div>
+            <div class="line m_l">
+            	<div class="input_sub iconfont"><span>&#xe612;</span></div>
+                <div class="text"><span>一颗</span></div>
+                <div class="input_sub iconfont"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        
+        <li>
+        	<div class="tit"><span>间隔</span></div>
+            <div class="line m_l">
+            	<div class="input_sub iconfont"><span>&#xe612;</span></div>
+                <div class="text"><span>今天</span></div>
+                <div class="input_sub iconfont"><span>&#xe61f;</span></div>
+            </div>
+        </li>
+        
+        <li class="remind_choose">
+        	<div class="tit"><span>方式</span></div>
+            <div class="line m_l">
+            	<div class="input_sub on"><i>饭前</i></div>
+                <div class="input_sub m_c"><i>饭中</i></div>
+                <div class="input_sub"><i>饭后</i></div>
+            </div>
+        </li>
+        <li class="remind_choose">
+        	<div class="tit"><span>位置</span></div>
+            <div class="line m_l">
+            	<div class="input_sub on"><i>大孔</i></div>
+                <div class="input_sub m_c"><i>小孔</i></div>
+                <div class="input_sub"><i>外置</i></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="initialization_input initialization_h" style="background:none;"><input type="submit" class="bg_blue" value="保存" /></div>
+
+<div class="public_input initialization_m">
+	<input type="submit"  class="bg_yellow" value="此药停止提醒" />
+	<input type="submit"  class="bg_yellow" value="删除这种药" />
+</div>
+
+</body>
+</html>

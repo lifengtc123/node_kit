@@ -1,0 +1,78 @@
+<%- include ../head.html %>
+<!-- dataTables -->
+<link rel="stylesheet" href="/css/plugins/datatable/TableTools.css">
+<!-- dataTables -->
+<script src="/js/plugins/datatable/jquery.dataTables.min.js"></script>
+<script src="/js/plugins/datatable/TableTools.min.js"></script>
+<script src="/js/plugins/datatable/ColReorder.min.js"></script>
+<script src="/js/plugins/datatable/ColVis.min.js"></script>
+<script src="/js/plugins/datatable/jquery.dataTables.columnFilter.js"></script>
+<script src="/js/index.js"></script>
+<body>
+<!-- 顶部菜单栏 -->
+<%- include ../tags/top.html %>
+
+<div class="container-fluid" id="content">
+    <!-- 左边菜单栏 -->
+    <%- include ../tags/left.html %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>App列表</h1>
+                </div>
+                <!-- 头部实时在线数 -->
+                <%- include ../tags/headInfo.html %>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="/">盒子中心</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">App</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">列表</a>
+                    </li>
+                </ul>
+                <div class="close-bread">
+                    <a href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box box-bordered box-color green">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-table"></i>
+                                Dynamic ajax loading (2500 entries)
+                            </h3>
+                        </div>
+                        <div class="box-content nopadding">
+
+                            <table class="table table-hover table-nomargin dataTable table-bordered dataTable-scroller dataTable-tools">
+                                <thead>
+                                <tr>
+                                    <th>Rendering engine</th>
+                                    <th>Browser</th>
+                                    <th>Platform(s)</th>
+                                    <th>Engine version</th>
+                                    <th>CSS grade</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div></div>
+
+</body>
+<%- include ../footer.html %>

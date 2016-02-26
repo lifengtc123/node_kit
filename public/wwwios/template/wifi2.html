@@ -1,0 +1,101 @@
+<div class="header_line"></div>
+
+<div class="initialization_bar">
+    <div class="piont first "><span>{{'initialization'|translate}}</span></div>
+    <div class="piont two on"><span>{{'connectWiFi'|translate}}</span></div>
+    <div class="piont three"><span>{{'LinkDevice'|translate}}</span></div>
+    <div class="piont four"><span>{{'Done'|translate}}</span></div>
+</div>
+
+<div class="initialization_con_line clear">
+    <div class="initialization_con clear netsork keep">
+        <img src="images/network.png" />
+        <i>{{'connectMain'|translate}}</i>
+        <span>{{'wifissidTitle'|translate}}{{wifissid}}</span>
+        <input type="text" ng-model="$state.wifipassword" class="input_text" placeholder="{{'WlanPwd'|translate}}" />
+    </div>
+</div>
+
+
+<div class="initialization_input"><a  ng-click="connectWifi()">{{'Connect'|translate}}</a></div>
+
+<!--<div class="box_img" ng-show="$state.showwifi2" style="margin-top: -27.5em;height:100%"></div>-->
+<!--<div class="box_img2" ng-show="$state.showwifi2">-->
+    <!--<div style="margin-left: 15%; margin-top: 2.5125em;">-->
+        <!--<img style="width:2.98em" src="images/arrow-up.png">-->
+    <!--</div>-->
+    <!--<div class="show_init initialization_con_line clear">-->
+        <!--<div class="initialization_con clear netsork keep">-->
+            <!--<span>{{'wifissidTitle'|translate}}{{wifissid}}</span>-->
+            <!--<input type="text" ng-model="wifipassword" class="input_text" placeholder="{{'WlanPwd'|translate}}" />-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class=" initialization_input"><a  ng-click="connectWifi()">{{'Connect'|translate}}</a></div>-->
+    <!--<div style="margin-left: 15%">-->
+        <!--<img src="images/arrow-horizontal.png">-->
+    <!--</div>-->
+<!--</div>-->
+<style>
+    .initialization_con_line {
+        margin-top: -1em;
+        border: solid 0.05em #ddd;
+    }
+    .box_img{
+        background:black;opacity:0.8;
+        position:fixed;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    /*.box_img2 .showline{*/
+    /*margin-top: -2.25em;*/
+    /*}*/
+    .box_img2{
+        margin-top: -20.1em;
+        /*background:black;*/
+        position:absolute;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    .box_img2 img{
+        width: 6em;
+    }
+
+    .box_add_input2{
+        margin: 0.25em auto 2.375em;
+        width: 93%;
+        height: 1.90625em;
+        line-height: 1.90625em;
+        border: solid 0.037em #398c99;
+        border-radius: 0.1875em;
+        color: #398c99;
+        background: none;
+    }
+    .box_add_img{
+        width: 70%;
+        height: 2.50625em;
+        background: #fff;
+        border-top: solid 0.037em #e2e2e2;
+        border-bottom: solid 0.037em #e2e2e2;
+        text-align: center;
+        border-radius: 0.3em;
+        margin-left: 15%;
+    }
+    .initialization_con{
+        margin:0em auto 1.8125em;
+    }
+    .initialization_con img{
+        padding-top: 1em;
+    }
+    .netsork .input_text{
+        border: solid 0.1em #d7d7d7;
+    }
+    .initialization_bar .piont span {
+        height:2em;
+        bottom:-2.3em;
+    }
+    .initialization_bar .on span { bottom:-2.3em;}
+</style>

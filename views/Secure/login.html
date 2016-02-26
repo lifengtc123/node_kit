@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>智能药盒管理系统</title>		
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/secure.css" />
+         <script src="/javascripts/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="login">
+	
+			<h1>智能药盒管理系统</h1>
+				
+			<form action="/login" method="post">
+			
+				<% if(error){ %>
+					<p class="error">
+						<%= error %>
+					</p>
+				<% } %>
+				<% if(success){ %>
+					<p class="success">
+						<%= success %>
+					</p>
+				<% } %>
+			
+				<p id="username-field">
+					<label for="username">用户名</label>
+                    <input type="text" name="username" id="username" value="" />
+				</p>
+				<p id="password-field">
+					<label for="password">密码</label>
+					<input type="password" name="password" id="password" value="" />
+				</p>
+				<p id="remember-field">
+					<input type="checkbox" name="remember" id="remember" value="true" <% if(remember){%>checked="true"<%}%> />
+					<label for="remember">记住密码</label>
+				</p>
+				<p id="signin-field">
+					<input type="submit" id="signin" value="登录" />
+				</p>
+			</form>
+		</div>
+    </body>
+</html>

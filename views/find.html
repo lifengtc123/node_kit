@@ -1,0 +1,6 @@
+
+<%= users.length %>
+<% users.forEach(function(user,index){ %>
+<p><%= user._id %>  <%= user.name %> <%= user.password %> <%= user.count %></p>
+<%  if(index>1000)return false;})  %>
+<%= JSON.stringify(users) %>

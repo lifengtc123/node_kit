@@ -1,0 +1,163 @@
+<div id="navigation">
+    <div class="container-fluid">
+        <a href="#" id="brand">盒子中心</a>
+        <a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
+        <ul class='main-nav'>
+            <li <% if(action=='application'){ %>class='active'<% } %>>
+            <a href="/">
+                <span>首页</span>
+            </a>
+            </li>
+
+            <li <% if(action=='boxes'){ %>class='active'<% } %>>
+            <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                <span>盒子</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="/boxes/chart">统计图表</a>
+                </li>
+                <li>
+                    <a href="/boxes/list">统计列表</a>
+                </li>
+            </ul>
+            </li>
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>App</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/apps/chart">统计图表</a>
+                    </li>
+                    <li>
+                        <a href="/apps/list">统计列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>药品字典</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="layouts-sidebar-hidden.html">信息列表</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+                    <span>系统设置</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="layouts-sidebar-hidden.html">用户角色</a>
+                    </li>
+                    <li>
+                        <a href="layouts-sidebar-hidden.html">用户部门</a>
+                    </li>
+                    <li>
+                        <a href="/users/list">用户信息</a>
+                    </li>
+                    <li>
+                        <a href="/menus/list">系统菜单</a>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+        <div class="user">
+            <ul class="icon-nav">
+                <li class='dropdown'>
+                    <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-envelope-alt"></i><span class="label label-lightred">1</span></a>
+                    <ul class="dropdown-menu pull-right message-ul">
+                        <li>
+                            <a href="#">
+                                <img src="img/demo/user-1.jpg" alt="">
+                                <div class="details">
+                                    <div class="name">管理员</div>
+                                    <div class="message">
+                                        功能在开发。。。
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="components-messages.html" class='more-messages'>消息中心 <i class="icon-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown sett">
+                    <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-cog"></i></a>
+                    <ul class="dropdown-menu pull-right theme-settings">
+                        <li>
+                            <span>Layout-width</span>
+                            <div class="version-toggle">
+                                <a href="#" class='set-fixed'>Fixed</a>
+                                <a href="#" class="active set-fluid">Fluid</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Topbar</span>
+                            <div class="topbar-toggle">
+                                <a href="#" class='set-topbar-fixed'>Fixed</a>
+                                <a href="#" class="active set-topbar-default">Default</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Sidebar</span>
+                            <div class="sidebar-toggle">
+                                <a href="#" class='set-sidebar-fixed'>Fixed</a>
+                                <a href="#" class="active set-sidebar-default">Default</a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class='dropdown colo'>
+                    <a href="#" class='dropdown-toggle' data-toggle="dropdown"><i class="icon-tint"></i></a>
+                    <ul class="dropdown-menu pull-right theme-colors">
+                        <li class="subtitle">
+                            主题颜色
+                        </li>
+                        <li>
+                            <span class='red'></span>
+                            <span class='orange'></span>
+                            <span class='green'></span>
+                            <span class="brown"></span>
+                            <span class="blue"></span>
+                            <span class='lime'></span>
+                            <span class="teal"></span>
+                            <span class="purple"></span>
+                            <span class="pink"></span>
+                            <span class="magenta"></span>
+                            <span class="grey"></span>
+                            <span class="darkblue"></span>
+                            <span class="lightred"></span>
+                            <span class="lightgrey"></span>
+                            <span class="satblue"></span>
+                            <span class="satgreen"></span>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="more-locked.html" class='lock-screen' rel='tooltip' title="锁屏" data-placement="bottom"><i class="icon-lock"></i></a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown"><%= user.username %><img src="img/demo/user-avatar.jpg" alt=""></a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a href="#">账号设置</a>
+                    </li>
+                    <li>
+                        <a href="/logout">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

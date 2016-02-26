@@ -1,0 +1,146 @@
+<%- include ../head.html %>
+<script src="/js/index.js"></script>
+<body>
+<!-- 顶部菜单栏 -->
+<%- include ../tags/top.html %>
+
+<div class="container-fluid" id="content">
+    <!-- 左边菜单栏 -->
+    <%- include ../tags/left.html %>
+    <div id="main">
+        <div class="container-fluid">
+            <div class="page-header">
+                <div class="pull-left">
+                    <h1>盒子图表</h1>
+                </div>
+                <!-- 头部实时在线数 -->
+                <%- include ../tags/headInfo.html %>
+            </div>
+            <div class="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="/">盒子中心</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">盒子</a>
+                        <i class="icon-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="#">图表</a>
+                    </li>
+                </ul>
+                <div class="close-bread">
+                    <a href="#"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                每日安装数
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <div id="flot-1" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                每日消息数
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <div id="flot-2" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                在线数
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <p>
+                                <strong>Set custom update interval (ms):</strong>
+                                <input type="text" name="updateInterval" id="updateInterval" class='input-mini'>
+                                <a href="javascript:void()" class='btn'>Set interval</a>
+                            </p>
+                            <div id="flot-3" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                按使用年龄分在线数
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <div class="btn-toolbar" style="margin-top:0;">
+                                <div class="btn-group stackControls">
+                                    <input type="button" value="With stacking" class='btn'>
+                                    <input type="button" value="Without stacking" class='btn'>
+                                </div>
+                                <div class="btn-group graphControls">
+                                    <input type="button" value="Bars" class='btn'>
+                                    <input type="button" value="Lines" class='btn'>
+                                    <input type="button" value="Lines with steps" class='btn'>
+                                </div>
+                            </div>
+                            <div id="flot-4" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                本日盒子在线数，按年龄
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <div id="flot-5" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="box">
+                        <div class="box-title">
+                            <h3>
+                                <i class="icon-bar-chart"></i>
+                                本日消息发送数
+                            </h3>
+                        </div>
+                        <div class="box-content">
+                            <div id="flot-6" class='flot'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div></div>
+
+</body>
+<%- include ../footer.html %>

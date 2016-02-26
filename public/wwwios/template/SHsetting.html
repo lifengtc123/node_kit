@@ -1,0 +1,26 @@
+<input id="openmediv" value="" type="hidden" />
+<div ng-repeat="ml in $state.alertmessages|filter:{type:'1'}" class="swipe-delete">
+    <div  class="remind_list1 remind_list_h1 remind_editor1" >
+        <a class="movedelete" ng-click="changeType('{{ml._id}}','{{ml.boxNumber}}','{{ml.mtype}}')"><img src="images/disabled.png"></a>
+        <a class="movedelete2" ng-click="deleteMessage('{{ml._id}}','{{ml.boxNumber}}')"><img src="images/delete.png"></a>
+    </div>
+    <!--<a href="#/shdetail/{{ml._id}}">-->
+    <div swipe-over="{{ml._id}}" class="remind_list remind_list_h newremind" style="margin-top:-3.965em">
+    <!--<a ng-click="mousemove($event,'{{ml._id}}')">-->
+        <div  class="pic"><span class="iconfont {{$state.ycolor[ml.color]}}">&#xe608;</span></div>
+    <!--</a>-->
+    <div class="tit namecolor{{ml.mtype}}">{{ml.name}} <span ng-show="ml.mtype==1">[{{'disabled'|translate}}]</span></div>
+    <div class="content"><span ng-repeat="time in ml.messageTime">{{time}}<span ng-show="$index+1<ml.messageTime.length">/</span></span>
+        <span>{{ml.content}}</span></div>
+    <div class="talk1 input_talk" ng-click="openfile($event,ml.filepath,ml.time,ml._id)"><img id="name_{{$index}}"  src="{{$state[ml._id]}}"></div>
+</div>
+        <!--</a>-->
+</div>
+
+<div class="remind_list remind_list_t">
+    <a href="#/alertshedit/{{number}}"><div class="add" ><span class="iconfont">&#xe61f;</span><i>{{'addNewContent' | translate}}</i></div></a>
+</div>
+
+<div class="nav_line"></div>
+
+

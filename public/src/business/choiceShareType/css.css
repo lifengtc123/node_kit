@@ -1,0 +1,44 @@
+.choiceShareType{
+   width:249px;
+   height:87px;
+   margin:0 auto;
+   color: #6d6e71;
+}
+.choiceShareType li{
+  float:left;
+  width:33.3%;
+  text-align: center;
+  padding-top:60px;
+}
+.choiceShareType li:hover{
+   
+}
+.choiceShareType  a{
+  color: #6d6e71;
+  text-decoration: none;
+}
+.choiceShareType .share{
+   background: url(./imgs/icon_1.jpg ) no-repeat center 14px;
+}
+.choiceShareType .share:hover{
+   background: url(./imgs/icon_4.jpg ) no-repeat center 14px;
+}
+.choiceShareType .friend{
+   background: url(./imgs/icon_2.jpg ) no-repeat center 14px;
+}
+ 
+.choiceShareType .friend:hover{
+   background: url(./imgs/icon_5.jpg ) no-repeat center 14px;
+}
+ 
+.choiceShareType .qrcode{
+   cursor: pointer;
+   background: url(./imgs/icon_3.jpg ) no-repeat center 14px;
+ 
+}
+.choiceShareType .qrcode:hover{
+   cursor: pointer;
+   background: url(./imgs/icon_6.jpg ) no-repeat center 14px;
+ 
+}
+ 

@@ -1,0 +1,10 @@
+<%- include ../head2.html %>
+<body style='overflow-y:hidden'>
+<div id="left" style="height:100%">
+    <iframe name="menus_list" src="<%= menus_left%>" frameborder="0" style="width:100%;height:100%" scrolling="auto"></iframe>
+</div>
+<div id="main" style="height:100%">
+    <iframe name="menus_main" src="<%= menus_list%>" frameborder="0" style="width:100%;height:100%" scrolling="auto"></iframe>
+</div>
+</body>
+<%- include ../footer.html %>

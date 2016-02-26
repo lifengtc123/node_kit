@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd"> 
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>menu_load</title>
+<script src="/javascripts/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/menu.js"></script>
+<script src="/javascripts/main-menu.js"></script>
+<script src="/javascripts/time.js"></script>
+<script src="/javascripts/fast.js"></script>
+<link href="/stylesheets/menu.css" type=text/css rel=stylesheet>
+<script>
+function closeParent(){
+	if(confirm("真的要退出吗？")==true){
+		qw = true;
+        if(true){			
+			this.parent.window.opener=null;
+			this.parent.location="/logout";
+		}else{
+			this.parent.window.opener=null;
+		    this.parent.window.close();
+		}
+	}else {
+		qw = false;
+	}
+}
+
+function makeClickEvent(action) {
+	if (typeof(action) == 'function') {
+		action(event);
+	} else {
+		eval(action);
+	}
+}
+
+</script>
+<style>
+td{font-size:12px;color:white;}
+</style>
+</head>
+<body onload="getTime()" onselectstart="return false" ondragstart="return false" onbeforecopy="return false" oncopy=document.selection.empty() onselect=document.selection.empty()>
+<table id=toplinebg cellSpacing=0 cellPadding=0 background="/images/head_topline_bg.gif" border=0> 
+<tbody>
+<tr> 
+    <td id="headline_left"><img src="/images/head_topline_left.gif"></td> 
+    <td id="headline" background="/images/head_topline.gif"> 
+	    <table align="right" width="100%"><tr>
+	    <td><div id="companymanecn">智能药盒管理系统</div></td>
+	    <td width="350" align="right"><a href="javascript:void(0);" onclick="open_dialog('/users/userInformSet?id=10',850,470)">用户信息设置</a>&nbsp;<span id=time></span>
+	    您好:&nbsp;<b><a href="javascript:void(0);">管理员</a></b>
+	    <font title=退出系统 style="cursor:pointer" onclick="closeParent()">退出</font> </td>
+	    </tr></table>
+    </td>
+    <td id=headline_right><img src="/images/head_topline_right.gif"></td>
+</tr></tbody>
+</table>
+<!-- 菜单 -->
+<table style="padding-top: 0px" cellSpacing=0 cellPadding=0 background="/images/head_topbg.gif" border=0> 
+<tbody> 
+  <tr> 
+    <td id="menuitem0_left"><img src="/images/menuitem0_left.gif"></td> 
+    <td class="menu">
+    <table style="margin-top: 2px" cellSpacing=0 cellPadding=0 border=0><tbody> <tr> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu0" noWrap songroupid="menugroup0" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>楼层管理 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu1" noWrap songroupid="menugroup1" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>数据管理 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu2" noWrap songroupid="menugroup2" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>海康配置 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu3" noWrap songroupid="menugroup3" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>ESeed配置 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu4" noWrap songroupid="menugroup4" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>数据配置 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu5" noWrap songroupid="menugroup5" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>用户管理 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+          <td class="menuitem menuitem0_default" id="menu6" noWrap songroupid="menugroup6" menulevel="0">
+     	<img class=menu_leftimg src="/images/menuitem0_default_bk_left.gif" align=absMiddle>系统设置 
+     </td> 
+     <td><img src="/images/head_button_tiao.gif"></td>
+      
+     </tr></tbody></table> 
+    </td>
+    <td id="logo">&nbsp;</td> 
+    <td id="menuitem0_right"><img src="/images/menuitem0_right.gif"></td> 
+  </tr>
+</tbody>
+</table>
+<span id="menugroup0" style="display:none" defaultmenuid="menu010"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>
+          <td class="menu_sub menuitem1_default" id="menu010" songroupid="menugroup14_14" menulevel="1" url="/StoryManagements/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">楼层管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu011" songroupid="menugroup14_14" menulevel="1" url="/ClassRooms/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">区域管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                        <td class="menu_sub menuitem1_default" id="menu012" songroupid="menugroup14_14" menulevel="1" url="/PushRecords/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">推送记录
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                          <td class="menu_sub menuitem1_default" id="menu013" songroupid="menugroup14_14" menulevel="1" url="/ConditionMants/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">环境监控
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu014" songroupid="menugroup14_14" menulevel="1" url="/EnergyMonitors/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">能耗监控
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu015" songroupid="menugroup14_14" menulevel="1" url="/StoryEnergyMonitors/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">模型监控
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                          <td class="menu_sub menuitem1_default" id="menu016" songroupid="menugroup14_14" menulevel="1" url="/Menlnsis/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">报警信息
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                          <td class="menu_sub menuitem1_default" id="menu017" songroupid="menugroup14_14" menulevel="1" url="/WeatherStations/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">气象站配置
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup1" style="display:none" defaultmenuid="menu020"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>                                                                                                                  <td class="menu_sub menuitem1_default" id="menu020" songroupid="menugroup14_14" menulevel="1" url="/WeatherStationDatas/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">气象站数据
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu021" songroupid="menugroup14_14" menulevel="1" url="/DataTables/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">能耗数据
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu022" songroupid="menugroup14_14" menulevel="1" url="/WsdDatas/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">温湿度数据
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                          <td class="menu_sub menuitem1_default" id="menu023" songroupid="menugroup14_14" menulevel="1" url="/BrushCards/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">卡点刷记录
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu024" songroupid="menugroup14_14" menulevel="1" url="/DataDelete/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">批量删除
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup2" style="display:none" defaultmenuid="menu030"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>                                                                                                  <td class="menu_sub menuitem1_default" id="menu030" songroupid="menugroup14_14" menulevel="1" url="/Persons/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">人员管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu031" songroupid="menugroup14_14" menulevel="1" url="/CardInfos/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">卡片管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu032" songroupid="menugroup14_14" menulevel="1" url="/DoorBans/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">门禁管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu033" songroupid="menugroup14_14" menulevel="1" url="/VideoMonitors/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">8700视频
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu034" songroupid="menugroup14_14" menulevel="1" url="/VideoInfos/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">视频监控
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu035" songroupid="menugroup14_14" menulevel="1" url="/ReadWebService/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">数据读取
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup3" style="display:none" defaultmenuid="menu040"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>                                                                                                                                                                                                  <td class="menu_sub menuitem1_default" id="menu040" songroupid="menugroup14_14" menulevel="1" url="/WeatherStationSets/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">气象站地址配置
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu041" songroupid="menugroup14_14" menulevel="1" url="/DeployTables/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">能耗地址配置
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                                                                                                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup4" style="display:none" defaultmenuid="menu050"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>
+                                                  <td class="menu_sub menuitem1_default" id="menu050" songroupid="menugroup14_14" menulevel="1" url="/modScanDeploys/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">通讯配置
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>
+                                          <td class="menu_sub menuitem1_default" id="menu051" songroupid="menugroup14_14" menulevel="1" url="/DataConfs/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">数据配置
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu052" songroupid="menugroup14_14" menulevel="1" url="/Grecordeds/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">采集记录
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                          <td class="menu_sub menuitem1_default" id="menu053" songroupid="menugroup14_14" menulevel="1" url="/JavaClasss/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">采集方法
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu054" songroupid="menugroup14_14" menulevel="1" url="/DataConfs/sdlist"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">手动写入列表
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup5" style="display:none" defaultmenuid="menu060"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>
+                                  <td class="menu_sub menuitem1_default" id="menu060" songroupid="menugroup14_14" menulevel="1" url="/users/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">用户信息
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                          <td class="menu_sub menuitem1_default" id="menu061" songroupid="menugroup14_14" menulevel="1" url="/roles/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">用户角色
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                          <td class="menu_sub menuitem1_default" id="menu062" songroupid="menugroup14_14" menulevel="1" url="/departs/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">部门信息
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu063" songroupid="menugroup14_14" menulevel="1" url="/DeviceRecords/list"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">登录设备记录
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>
+                                                                                                                                                                                                                                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+<span id="menugroup6" style="display:none" defaultmenuid="menu070"> 
+<table class="t2" cellSpacing="0" cellPadding="0"> 
+  <tr> 
+    <td id="mi1_l"><img src="http://127.0.0.1:8080/public/images/m1l.gif" width=9></td> 
+    <td class="menu2" vAlign="top"> 
+      <table cellSpacing="0" cellPadding="0" border="0"><tbody> 
+        <tr>                                                                                                                                                                                                                                  <td class="menu_sub menuitem1_default" id="menu070" songroupid="menugroup14_14" menulevel="1" url="/wordTypes/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">字典类别
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                          <td class="menu_sub menuitem1_default" id="menu071" songroupid="menugroup14_14" menulevel="1" url="/words/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">字典数据
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                                                                                                                                                          <td class="menu_sub menuitem1_default" id="menu072" songroupid="menugroup14_14" menulevel="1" url="/RoleControls/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">权限控制
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                                          <td class="menu_sub menuitem1_default" id="menu073" songroupid="menugroup14_14" menulevel="1" url="/menus/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">菜单管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>                                                          <td class="menu_sub menuitem1_default" id="menu074" songroupid="menugroup14_14" menulevel="1" url="/Historys/index"> 
+          <img src="http://127.0.0.1:8080/public/images/menuitem1_default_bk_left.gif" align="absmiddle"> 
+          <img class="menu2_img" src="http://127.0.0.1:8080/public/images/index.gif" align="absmiddle">行为管理
+          </td> 
+          <td class="menu2_tiao"><img src="http://127.0.0.1:8080/public/images/head2_button_tiao.gif"></td>
+                                                              	</tr>
+      </table></td> 
+     <td id="menuitem1_right" width=9 background="http://127.0.0.1:8080/public/images/menuitem1_right.gif">
+     <img src="http://127.0.0.1:8080/public/images/menuitem1_right.gif" width=9></td>
+  </tr>
+</table>
+</span>
+</body>
+</html>

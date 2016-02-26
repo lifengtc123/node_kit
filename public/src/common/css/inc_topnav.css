@@ -1,0 +1,156 @@
+#inc-topnav {
+	width: 960px;
+	height: 83px;
+	margin: 0 auto;
+	position: relative;
+       *z-index: 2;
+}
+
+#inc-topnav a:hover {
+	color: #f06c5a;
+}
+
+#inc-topnav .topnav-logo {
+	width: 315px;
+	height: 100%;
+	background: url(../imgs/yingshiy-logo.png) no-repeat 0 25px;
+	display: block;
+	float: left;
+}
+
+#inc-topnav .topnav-list {
+	height: 22px;
+	float: right;
+	margin-top: 33px;
+}
+
+#inc-topnav .topnav-item {
+	display: inline-block;
+	height: 22px;
+	padding-left: 5px;
+	padding-right: 5px;
+	float: left;
+	color: #BEBEBE;
+	line-height: 20px;
+}
+
+#inc-topnav .topnav-item-login {
+	padding-left: 19px;
+	padding-right: 20px;
+	background: url(../imgs/login_bg.png) no-repeat;
+	margin-right: 4px;
+}
+
+#inc-topnav .topnav-item-login a {
+	color: #fff;
+}
+
+#inc-topnav .topnav-item .app-icon {
+	padding-left: 25px;
+	background: url(../imgs/icons/app_icon.png) no-repeat 5px 1px;
+}
+
+/* 账户详细信息层 */
+#inc-topnav .nav-box {
+	position: absolute;
+	min-width: 80px;
+	border: 1px solid #d0d0d0;
+	background: white;
+	z-index: 9999;
+}
+
+#inc-topnav .nav-box ul {
+	padding-bottom: 6px;
+}
+
+#inc-topnav .nav-box li {
+	height: 25px;
+	line-height: 25px;
+	padding-right: 5px;
+}
+
+#inc-topnav .nav-box li:hover {
+	/* background: #f06c5a; */
+}
+
+#inc-topnav .nav-box li a {
+	display: block;
+	color: #8b8b8b;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+}
+
+#inc-topnav .nav-box li a:hover {
+	color: #f06c5a;
+	/* text-decoration: none; */
+}
+
+.site-map .triangle-up:hover {
+	cursor: default;
+	text-decoration: none;
+}
+
+#inc-topnav .site-map li:hover:FIRST-CHILD {
+	background: white;
+}
+
+#inc-topnav .site-map .triangle-up:hover {
+	color: #8b8b8b;
+}
+
+/* account-box */
+#inc-topnav .account-box {
+	right: 339px;
+	top: 30px;
+	display: none;
+}
+#inc-topnav .yingshi-box{
+	right: 248px;
+	top:30px;
+	display: none;
+	width:90px;
+}
+#inc-topnav .navigation-box{
+	right: 3px;
+	top: 30px;
+	display: none;
+}
+
+/* site-map */
+#inc-topnav .site-map {
+	right: 0px;
+	top: 11px;
+	display: none;
+}
+
+#inc-topnav .topnav-list .triangle-down {
+	padding-right: 15px;
+	background: url("../imgs/icons/icon-triangle-down.png") no-repeat right 7px;
+}
+
+#inc-topnav .nav-box .triangle-up {
+	background: url("../imgs/icons/icon-triangle-up.png") no-repeat right 9px;
+}
+
+/*文字颜色*/
+#inc-topnav .text-gray {
+	color: gray;
+}
+
+
+
+.inc-detect {
+	width: 960px;
+	height: 50px;
+	margin: 0 auto;
+	background: #F6F2AA;
+	display: none;
+}
+
+.inc-detect .desc {
+	padding-left: 30px;
+	line-height: 50px;
+	font-size: 14px;
+}
+	

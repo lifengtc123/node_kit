@@ -1,0 +1,86 @@
+
+<div class="header_line"></div>
+
+<div class="initialization_bar">
+    <div class="piont first "><span>{{'initialization'|translate}}</span></div>
+    <div class="piont two "><span>{{'connectWiFi'|translate}}</span></div>
+    <div class="piont three on"><span>{{'LinkDevice'|translate}}</span></div>
+    <div class="piont four"><span>{{'Done'|translate}}</span></div>
+</div>
+
+<div class="initialization_con_line clear">
+    <div class="initialization_con clear binding_failure">
+        <span>{{'deviceNoLink'|translate}}</span>
+        <i><b></b><em>{{'complexNet'|translate}}</em></i>
+        <i><b></b><em>{{'3GWireless'|translate}}</em></i>
+        <i><b></b><em>{{'5Gband'|translate}}</em></i>
+        <span>{{'recommend'|translate}}</span>
+        <i><b></b><em>{{'ReplaceWireless'|translate}}</em></i>
+        <i><b></b><em>{{'changerRouter'|translate}}</em></i>
+    </div>
+</div>
+<style>
+    .box_img{
+        background:black;opacity:0.8;
+        position:fixed;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    .input_init{
+        width: 80%;
+        background-color: #ffffff;
+        margin-left: 10%;
+        height: 2.75em;
+        text-align: center;
+        padding-top:0.4em;;
+    }
+    .showwifi4_init{
+        width: 88%;
+        /* padding: 1em; */
+        margin: 0em 6% 0;
+    }
+    .box_img2{
+        margin-top: -20.1em;
+        /*background:black;*/
+        position:absolute;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    .initialization_con_line {
+        margin-top: -1em;
+        /* border: solid 0.05em #ddd;*/
+    }
+    .initialization_con img{
+        padding-top: 1.5em;
+    }
+    .initialization_con i {height:auto}
+    .initialization_con i em{width: 16.2em;}
+    .initialization_bar .piont span {
+        height:2em;
+        bottom:-2.3em;
+    }
+    .box_img2 img{
+        width: 6em;
+    }
+    .initialization_bar .on span { bottom:-2.3em;}
+    .binding_failure {
+        margin: 1em 0 1.359375em 1.21875em;
+    }
+</style>
+<div class="initialization_input"><a ui-sref="wifiap">{{'againSign'|translate}}</a></div>
+
+<!--<div class="initialization_input"><a href="#">{{'feedbackTitle'|translate}}</a></div>-->
+<div class="nav_line"></div>
+<!--<div class="box_img" ng-show="$state.showwifi4" style="margin-top: -28.3em;height:100%"></div>-->
+<!--<div class="box_img2" ng-show="$state.showwifi4">-->
+<!--<div style="margin-left: 15%; margin-top: 7.2157em;">-->
+<!--<img style="width:3em" src="images/arrow-up.png">-->
+<!--</div>-->
+<!--<div class="input_init" style="background-color: #ffffff">-->
+<!--<div class="showwifi4_init initialization_input"><a ui-sref="wifiap">{{'againSign'|translate}}</a></div>-->
+<!--</div>-->
+<!--</div>-->

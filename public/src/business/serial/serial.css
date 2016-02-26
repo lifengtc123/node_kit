@@ -1,0 +1,35 @@
+p.serialLan_CodeNum{
+    margin-bottom: 9px;
+}
+.ys-content{
+    font-size: 13px;
+    color: #6d6e71;
+}
+#serialForm{
+    margin-top: 9px;
+    height: 60px;
+}
+.validator .left-side {
+    float: left;
+    margin-top: 4px;
+}
+.validator .right-side {
+    margin: 9px auto 5px 78px;
+    display: block;
+    width: 165px;
+}
+.validator label.error {
+    color: #e1593b;
+}
+.validator label.error, .validator label.tip {
+    display: block;
+     margin: 3px 0px 10px 65px;
+}
+#serialForm .ys-btn{
+    text-align: center!important;
+    padding-right:0!important;
+}
+p.bar_code {
+    text-align: center;
+}
+

@@ -1,0 +1,84 @@
+.container.monitor,.wrapper{
+	position:relative;
+}
+.chartWrapper{
+	width:730px;
+	margin:10px 0 20px 0;
+	padding:20px 0;
+	overflow:hidden;
+	position:relative;
+}
+.chartWrapper.border{
+	border:1px solid #cacaca;
+	border-radius:3px;
+	background:#fff;
+}
+.chartWrapper canvas{
+	margin:15px 0 0 0;
+}
+.chartBtn{
+	color:#3496d4;
+	font-weight:bold;
+	background:url(imgs/chart_down.png) no-repeat;
+	cursor:pointer;
+	line-height:12px;
+	padding-left:12px;
+	margin-left:20px;
+	float:left;
+}
+.chartBtn.chartCollapse{
+	background:url(imgs/chart_up.png) no-repeat;
+	color:#9a9a9a;
+}
+.chartMenu{
+
+}
+.chartTitle{
+	float:left;
+	margin-left:220px;
+	font-size:16px;
+	color:#333;
+	font-weight:bold;
+}
+.chartPrev{
+	float:right;
+	margin-right:15px;
+	color:#888;
+	cursor:pointer;
+}
+.chartNext{
+	float:right;
+	margin-right:15px;
+}
+.chartDay{
+	float:right;
+	margin-right:15px;
+}
+.chartPrev.disabled a , .chartNext.disabled a{
+	cursor:default;
+	color:#ccc;
+	text-decoration:none;
+}
+.chartWeek{
+	float: right;
+	margin-right: 52px;
+}
+.chartPrev a,.chartNext a,.chartDay a,.chartWeek a{
+	color:#888;
+}
+.chartDay.selected a,.chartWeek.selected a{
+	color:#fd0505;
+}
+.tipValue{
+	position:absolute;
+	top:20px;
+	left:20px;
+	padding:3px 6px;
+	background:#ff8261;
+	border-radius:4px;
+	color:#fff;
+	text-align:center;
+	line-height:14px;
+	display:none;
+	z-index:9999;
+}

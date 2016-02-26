@@ -1,0 +1,49 @@
+<div class="header_line"></div>
+
+<div class="remind_editor">
+    <ul>
+        <li>
+            <div class="tit">{{'language'|translate}}</div>
+            <div class="line m_l" >
+                <div class="text">
+                <select ng-model="data.language" class="boxselect">
+                    <option selected="{{data.language=='zh_CN'}}" value="zh_CN">中文</option>
+                    <option selected="{{data.language=='en_UK'}}" value="en_UK">English</option>
+                </select>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div class="tit">{{'volume'|translate}}</div>
+            <div class="line" style="float: left;margin-left: 3.125em;">
+                <div style="float: left"><a ng-click="clickDec('volume',1)"><img style="width: 80%" src="images/blue_02.png"></a></div>
+                <div  style="float: left;">
+                <input type="range" min='1' max='8' step="1" style="width:140px;" ng-model="data.volume"/>
+                </div>
+                <div style="float: left;margin-left:0.5em"><a ng-click="clickAdd('volume',8)"><img  style="width: 80%" src="images/blue_01.png"></a></div>
+                <!--<div  id="example-21" class="example">-->
+                    <!--<div id="rating-21">-->
+                    <!--</div>-->
+                    <!--<div id="result-21">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+             </div>
+        </li>
+    </ul>
+</div>
+
+<style>
+    #example-21 #rating-21{
+        float: left;
+    }
+    .remind_editor .input_text{
+        font-size: 1em;
+    }
+    .remind_editor .m_l{
+        margin-left: 5.5em;
+    }
+</style>
+

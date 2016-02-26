@@ -1,0 +1,44 @@
+<div class="header_line"></div>
+
+<div class="habit2">
+    <div class="line_left">
+        <div class="name  netsork" >
+            <img src="{{img}}" />
+            <input ng-model="$state.boxname" type="text" class="input_text" ></div>
+        <input type="hidden" ng-model="$state.number">
+    </div>
+</div>
+<div style="background: #fff; overflow: hidden;  margin-top: 1.125em;padding-bottom: 0.5em;">
+    <ul>
+        <li style="text-align: center;"><img style="width:11em;border: solid 0.1em #D8D8D8;
+  margin-top: 0.5em;" src="{{filepath}}"/></li>
+        <li style="text-align: center;padding-top: 0.3em;"><strong>{{'invitationcode'|translate}}:{{number}}</strong>
+        </li>
+    </ul>
+</div>
+<style>
+    .habit2{
+        width:100%;
+        height: auto;
+    }
+    /*.info_editor{*/
+        /*border-radius: 0.2142em;*/
+        /*background: #fff;*/
+        /*overflow: hidden;*/
+        /*margin-bottom: 0.6em;*/
+        /*width: 86%;*/
+        /*margin-left: 7%;*/
+    /*}*/
+    .netsork .input_text{
+        font-size: 0.798em;
+        height: 2.5em;
+        /* margin-top: 0.825em; */
+        color: #000000;
+        border: none;
+        /* background: none; */
+        padding-left: 0.2em;
+        width:65%;
+        border: solid 0.1em #e2e2e2;
+        border-radius: 0.1875em;
+    }
+</style>

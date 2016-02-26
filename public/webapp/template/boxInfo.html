@@ -1,0 +1,52 @@
+<div class="header_line"></div>
+
+<div class="habit">
+
+    <div class="line_left">
+        <div class="name"><a ng-click="openInfo()" ng-model="type"><img src="{{filepath}}" />{{boxname}}</a></div>
+        <div class="list listspan">
+            <ul>
+                <li ng-repeat="message in messages|limitTo:3|orderBy:'-createTime'|filter:{name:'!null'}">
+                    <div ng-switch on="{{message.style}}" style="float:left;">
+                        <span style="font-size: 1.2em" class="icon1" ng-switch-when="0">
+                            <div class="iconfont {{ycolor[message.color]}} iconleft" >&#xe624;</div><div class="iconfont yw_while iconright">&#xe625;</div>
+                        </span>
+                        <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="1" style="margin-left: 0.56em; margin-right: 0.4em;font-size: 1.2em;">&#xe626;</em>
+                        <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="2" style="margin-left: 0.56em;margin-right: 0.4em;font-size: 1.2em;">&#xe627;</em>
+                        <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="3" style="margin-left: 0.56em;margin-right: 0.4em;font-size: 1.2em;">&#xe628;</em>
+                        <em class="iconfont {{ycolor[message.color]}}"ng-switch-when="4" style="margin-left: 0.56em;margin-right: 0.4em;font-size: 1.2em;">&#xe629;</em>
+                    </div>
+                    <span>{{message.name}}</span>
+                    <span ng-show="message.isK==2">【{{'Holes'|translate}}】</span>
+                    <span ng-show="message.isK==1">【{{'Macroporous'|translate}}】</span>
+                    <span ng-show="message.isK==0">【{{'External'|translate}}】</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="circle">
+        <div class="pie_bg"></div>
+        <div class="pie_left"><div class="left"ng-style="left"></div></div>
+        <div class="pie_right"><div class="right" ng-style="right"></div></div>
+        <div class="circle_mask"><b>{{percent}}</b><span>%</span><i>{{'drugHabit'|translate}}</i></div>
+    </div>
+
+</div>
+<div class="box_info_list" ng-show="$state.openInfos"  ng-click="closeDetail()">
+    <ul>
+        <li>
+            <strong>
+                {{boxname}}
+            </strong>
+        </li>
+        <li style="text-align: center;"><img style="width:11em" src="{{filepath}}"/></li>
+        <li><strong>{{'invitationcode'|translate}}:{{number}}</strong>
+        </li>
+    </ul>
+</div>
+<datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="wellwell-sm">
+</datepicker>
+
+
+
+<div class="nav_line"></div>

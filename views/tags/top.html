@@ -1,0 +1,53 @@
+<div id="navigation">
+    <div class="container-fluid">
+        <a href="/" id="brand">小盒中心</a>
+        <!--<a href="#" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>-->
+        <ul class='main-nav'>
+            <%if(menus_p.length>0){%>
+            <% menus_p.forEach(function(menu_p,index){%>
+            <li <%if(index==0){%>class="active"<%}%>  menu="1" name="<%=menu_p.name%>">
+            <a href="<%= menu_p.url%>" data-toggle="dropdown" class='dropdown-toggle'>
+                <span><%= menu_p.name%></span>
+                <span class="caret"></span>
+            </a>
+            <%if(menus_c.length>0){%>
+            <ul class="dropdown-menu">
+                <% menus_c.forEach(function(menu_c,index){%>
+                <%if(menu_c.pid==menu_p.cid){%>
+                <li>
+                    <a href="<%= menu_c.url%>" target="main" onclick="active('<%=menu_p.name%>')"><%= menu_c.name%></a>
+                </li>
+                <%}%>
+                <%})%>
+            </ul>
+            <%}%>
+            </li>
+            <%})%>
+            <%}%>
+
+        </ul>
+        <div class="user">
+            <div class="dropdown">
+                <a href="#" class='dropdown-toggle' data-toggle="dropdown">
+                    <% if(user.image!=""&&user.image!=null){%><img style="width:30px" src="<%=user.image%>" alt=""><%}%>
+                    <% if(user.image==""||user.image==null){%><img src="../img/demo/user-avatar.jpg" alt=""><%}%>
+                </a>
+                <ul class="dropdown-menu pull-right">
+                    <li>
+                        <a href="/users/showme" target="main">账号设置</a>
+                    </li>
+                    <li>
+                        <a href="/logout">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function active(obj){
+            $("li[menu=1]").removeClass("active");
+            $("li[name="+obj+"]").addClass("active");
+        }
+
+    </script>
+</div>

@@ -1,0 +1,165 @@
+.Dialog-friendsAccept {
+  padding: 12px;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-footer {
+  color: #999999;
+  margin-top: 9px;
+  width: 264px;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-footer a {
+  text-decoration: none;
+  color: #166bd4;
+}
+.Dialog-friendsAccept .friendAvatar {
+  width: 68px;
+  height: 68px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  float: left;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-info {
+  dispaly: block;
+  float: left;
+  width: 163px;
+  margin-left: 10px;
+  color: #333333;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-info span {
+  display: block;
+  line-height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-info span.friendName {
+  font-weight: bold;
+}
+.Dialog-friendsAccept .Dialog-friendsAccept-info span.remak {
+  margin-top: 7px;
+  line-height: 17px;
+}
+.Dialog-friendsAccept .buttonBox {
+  text-align: right;
+  margin-top: 14px;
+}
+.Dialog-friendsAccept .buttonBox .btn {
+  padding: 4px 20px 4px;
+  margin-left: 12px;
+  text-shadow: 0 0 0 #ffffff;
+  float: none;
+}
+.Dialog-friendsAccept .buttonBox .btn.accept {
+  background: #ff5a00;
+  color: #ffffff;
+}
+.Dialog-friendsAccept .inviteListBox {
+  height: 236px;
+  overflow-y: auto;
+}
+.Dialog-friendsAccept .inviteListBox li {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 10px;
+}
+.Dialog-friendsAccept .inviteListBox li .buttonBox-more {
+  margin: 2px 0 10px 0;
+  text-align: left;
+}
+.Dialog-friendsAccept .inviteListBox li .buttonBox-more .btn {
+  margin: 0 12px 0 0;
+  font-size: 13px;
+}
+/* =S 自定义弹出框 */
+.myDialog {
+  background: #fff;
+  overflow: hidden;
+  font-size: 12px;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  z-index: 9999;
+  font-family: 'Microsoft YaHei';
+  /* =S 图标 */
+  /* =E 图标 */
+  /* 账号绑定 */
+}
+.myDialog .myDialog-header {
+  height: 19px;
+  line-height: 19px;
+  padding: 5px 10px;
+  background: #f4f4f4;
+}
+.myDialog .myDialog-header .myDialog-title {
+  color: #6d6e71;
+  margin-left: 5px;
+  float: left;
+  height: 19px;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.myDialog .myDialog-header .myDialog-close {
+  float: right;
+  margin-top: 1px;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+.myDialog .myDialog-content {
+  color: #6d6e71;
+  font-size: 12px;
+}
+.myDialog .icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(imgs/icon.png) no-repeat;
+}
+.myDialog button {
+  outline: none;
+}
+.myDialog .myDialog-footer {
+  text-align: right;
+  padding-right: 20px;
+}
+.myDialog .myDialog-footer input {
+  margin-left: 10px;
+}
+.fullbg {
+  background-color: gray;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  z-index: 9998;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+}
+/* =E 自定义弹出框 */
+#friendsAcceptDialogMessage .myDialog-content {
+  padding: 0;
+}

@@ -1,0 +1,100 @@
+<%- include ../head2.html %>
+<script>
+    $(function(){
+        $("#tree").dynatree({
+            title: "Event samples",
+            rootVisible: true,
+            onActivate: function(dtnode) {
+                logMsg("onActivate(%o)", dtnode);
+                $("#echoActive").text(dtnode.data.title);
+                if( dtnode.data.url )
+                    window.open(dtnode.data.url,'menus_main');
+            }
+        });
+
+    });
+</script>
+<div class="container-fluid" id="content">
+<div id="main" class="left">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="box">
+                <div class="box-title">
+                    <h3>
+                        <i class="icon-reorder"></i>
+                        组织机构
+                    </h3>
+                    <a href="/departs/left" ><h3 style="margin-left: 1em"><i class="icon-repeat"></i></h3></a>
+                </div>
+                <div class="box-content nopadding">
+                    <div class="span4">
+                        <div id="tree" class="filetree">
+                            <ul>
+                                <% departs.forEach(function(depart,index){%>
+                                	<%if(depart.pid=="0"){%>
+	                                	<li class="folder" data="url: '/departs/listByDepartId?cid=<%=depart.cid%>'">
+	                                       <%=depart.name%>
+	                                       <%if(depart.cid!=null&&depart.cid!="0"){%>
+	                                       <ul>
+	                                       <% departs.forEach(function(child,index){%>
+	                                           <%if(child.pid==depart.cid){%>
+	                                           <li data="url: '/departs/listByDepartId?cid=<%=child.cid%>'"><%=child.name%></li>
+	                                            <%}%>
+	                                           <%})%>
+	                                       </ul>
+	                                       <%}%>
+	                                   </li>
+                                	<%}%>
+                                <%})%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+</div>
+<style>
+    body {
+        background: #eee;
+
+    }
+    .left{
+        width: 200px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #eee;
+        height: 100%;
+        overflow-x: visible;
+    }
+    #main {
+        background: #eee;
+        margin-left: 200px;
+        overflow: visible;
+        padding-bottom:0px;
+    }
+    .container-fluid{
+        background: #eee;
+    }
+    .box .box-content {
+        padding: 20px;
+         background: #eee;
+    }
+    .box .box-title {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0 7px 0px;
+        margin-top: 10px;
+    }
+
+    .filetree{
+        background: #eee;
+    }
+    .ul.dynatree-container{
+        background-color:  #eee;
+    }
+</style>

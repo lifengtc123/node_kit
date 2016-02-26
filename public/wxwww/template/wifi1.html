@@ -1,0 +1,137 @@
+<div class="header_line"></div>
+
+<div class="initialization_bar">
+    <div class="piont first on"><span>{{'initialization'|translate}}</span></div>
+    <div class="piont two"><span>{{'connectWiFi'|translate}}</span></div>
+    <div class="piont three"><span>{{'LinkDevice'|translate}}</span></div>
+    <div class="piont four"><span>{{'Done'|translate}}</span></div>
+</div>
+
+<div class="initialization_con_line clear lineclear">
+    <div class="initialization_con clear initialization_padding">
+        <img ng-src="{{image}}"/>
+        <span>{{'makesure'|translate}}</span>
+        <i><b></b><em >{{'phonelink'|translate}}</em></i>
+        <i><b></b><em>{{'flashRight'|translate}}</em></i>
+        <i><b></b><em>{{'frequency'|translate}}</em></i>
+        <i><b></b><em>请下载小盒APP连接小盒。然后通过微信扫一扫添加小盒</em></i>
+    </div>
+</div>
+
+<div class="initialization_input" ><a  ng-click="openScan()"><span>扫一扫添加盒子</span></a></div>
+<div ng-controller="TitBox">
+<div class="initialization_input initialization_invite" ng-click="useincode()" ><span >{{'useInvitation'|translate}}</span></div>
+
+<div class="initialization_input initialization_a"><a href="#">{{'whatInvitation'|translate}}</a></div>
+
+<div class="initialization_invite_line" ng-show="useincod">
+    <div class="tit">{{'invitationcode'|translate}}</div>
+    <input type="text" class="input_text" ng-model="yq.tit"/>
+    <span style="float:left;padding-top:0.3em;font-size: 0.828125em;color:#aa0000" ng-show="error!=''">{{error}}</span>
+    <input type="submit" class="input_submit" ng-click="linktit()"  value="{{'Connect'|translate}}" />
+</div>
+
+
+
+<div class="mask" name="mask1" ng-style="mask1" ng-click="nouse()"></div>
+</div>
+
+<!--<div class="box_img" ng-show="$state.showwifi1" style="margin-top: -34.3em;height:100%"></div>-->
+<!--<div class="box_img2" ng-show="$state.showwifi1">-->
+    <!--<div style="margin-left: 1em;margin-top: -8.4em;padding-bottom: 2.6em;   font-size: 1em;">-->
+        <!--<span style="font-size: 1.5em;color:#ffffff">Make Sure And Click!</span>-->
+    <!--</div>-->
+    <!--<div style="margin-left: 2em; margin-top: -2em; ">-->
+        <!--<img style="width:3.1em" src="images/arrow-up.png">-->
+    <!--</div>-->
+    <!--<div class="showline initialization_con_line clear lineclear ">-->
+        <!--<div class="initialization_con clear initialization_padding">-->
+            <!--<span>{{'makesure'|translate}}</span>-->
+            <!--<i><b></b><em >{{'phonelink'|translate}}</em></i>-->
+            <!--<i><b></b><em>{{'flashRight'|translate}}</em></i>-->
+            <!--<i><b></b><em>{{'frequency'|translate}}</em></i>-->
+            <!--<a href="#">{{'indicatorOff'|translate}}&gt;</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="initialization_input newinput" ><a  ui-sref="wifi2"><span>{{'satisfied'|translate}}</span></a></div>-->
+    <!--<div style="margin-left: 15%">-->
+        <!--<img src="images/arrow-horizontal.png">-->
+    <!--</div>-->
+<!--</div>-->
+<style>
+    .initialization_invite_line .input_submit {
+        margin: 1em 0 2.7em;
+
+    }
+    .initialization_invite_line .input_text {
+        border: solid 0.1em #d7d7d7;
+    }
+    .box_img{
+        background:black;opacity:0.8;
+        position:fixed;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    /*.box_img2 .showline{*/
+        /*margin-top: -2.25em;*/
+    /*}*/
+    .box_img2{
+        margin-top: -26.1em;
+        /*background:black;*/
+        /*opacity:0.8;*/
+        position:absolute;
+        width:100%;
+        /*height: 100%;*/
+        /*position: fixed;*/
+
+    }
+    .box_img2 img{
+        width: 6em;
+    }
+    /*.newinput{*/
+        /*margin:3.1em 2.5714em 0;*/
+
+    /*}*/
+    .box_add_input2{
+        margin: 0.25em auto 2.375em;
+        width: 93%;
+        height: 1.90625em;
+        line-height: 1.90625em;
+        border: solid 0.037em #398c99;
+        border-radius: 0.1875em;
+        color: #398c99;
+        background: none;
+    }
+    .box_add_img{
+        width: 70%;
+        height: 2.50625em;
+        background: #fff;
+        border-top: solid 0.037em #e2e2e2;
+        border-bottom: solid 0.037em #e2e2e2;
+        text-align: center;
+        border-radius: 0.3em;
+        margin-left: 15%;
+    }
+
+    /*.lineclear{*/
+        /*margin-top: -1em;*/
+        /*border: solid 0.05em #ddd;*/
+    /*}*/
+    .initialization_con_line {
+        margin-top: -1em;
+        border: solid 0.05em #ddd;
+    }
+
+    .initialization_con img{
+        padding-top:0.5em;
+    }
+    .initialization_con i {height:auto}
+    .initialization_con i em{width: 16.2em;}
+    .initialization_bar .piont span {
+        height:2em;
+        bottom:-2.3em;
+    }
+    .initialization_bar .on span { bottom:-2.3em;}
+</style>

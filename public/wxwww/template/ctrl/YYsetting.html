@@ -1,0 +1,54 @@
+<input id="openmediv" value="" type="hidden" />
+<div ng-repeat="ms in $state.alertmessages|filter:{type : '0'}|orderBy:['mtype','-createTime']" class="swipe-delete">
+    <div  class="remind_list1 remind_list_h1" >
+        <a class="movedelete" ng-click="changeType('{{ms._id}}','{{ms.boxNumber}}','{{ms.mtype}}')"><img src="images/disabled.png"></a>
+        <a class="movedelete2" ng-click="deleteMessage('{{ms._id}}','{{ms.boxNumber}}')"><img src="images/delete.png"></a>
+    </div>
+    <!--<a href="#/yydetail/{{ms._id}}">-->
+    <div  swipe-over="{{ms._id}}"  class="remind_list remind_list_h remind_editor alert_top" >
+        <!--<a ng-click="mousemove($event,'{{ms._id}}')">-->
+         <div  class="pic shape shape1"  ng-switch on="{{ms.style}}">
+                <!--</a>-->
+         <span  ng-switch-when="0"><div class="iconfont {{$state.ycolor[ms.color]}}" style="font-size:3em">&#xe624;</div><div class="iconfont" style="font-size:3em">&#xe625;</div></span>
+         <span  ng-switch-when="1"><div class="iconfont {{$state.ycolor[ms.color]}}" style="font-size:3em">&#xe626;</div></span>
+         <span  ng-switch-when="2"><div class="iconfont {{$state.ycolor[ms.color]}}"style="font-size:3em" >&#xe627;</div></span>
+         <span  ng-switch-when="3"><div class="iconfont {{$state.ycolor[ms.color]}}" style="font-size:3em">&#xe628;</div></span>
+         <span  ng-switch-when="4"><div class="iconfont {{$state.ycolor[ms.color]}}"  style="font-size:3em">&#xe629;</div></span>
+    </div>
+    <div class="tit2 namecolor{{ms.mtype}}" >{{ms.name}}
+        <span ng-switch on="{{ms.isK}}">
+        <span ng-switch-when="2">[{{'Macroporous' | translate}}]</span>
+        <span ng-switch-when="1">[{{'Holes' | translate}}]</span>
+        <span ng-switch-when="0">[{{'External' | translate}}]</span>
+        <span ng-show="ms.mtype==1">[{{'disabled'|translate}}]</span>
+        </span>
+    </div>
+    <div class="content">
+        <div>
+        <span ng-repeat="time in ms.messageTime">{{time}}<span ng-show="$index+1<ms.messageTime.length">/</span></span>
+        <span ng-switch on="{{ms.messageNo}}">
+            <span ng-switch-when="1">{{'OnceDay' | translate}}</span>
+            <span ng-switch-when="2">{{'TwiceDay' | translate}}</span>
+            <span ng-switch-when="3">{{'ThriceDay' | translate}}</span>
+            <span ng-switch-when="4">{{'FourDay' | translate}}</span>
+            <span ng-switch-when="5">{{'FiveDay' | translate}}</span>
+        </span>
+        </div>
+    </div>
+        <div class="talk1 input_talk" ng-click="openfile($event,ms.filepath,ms.time,ms._id)"><img id="name_{{ms._id}}" src="{{$state[ms._id]}}"></div>
+</div>
+</div>
+    <!--<div class="remind_list remind_list_h remind_editor newremind" id="{{ms._id}}" style="margin-top:-3.965em;float: right;width: 4em;" >-->
+     <!--<div class="talk1 input_talk" ng-click="openfile($event,ms.filepath,ms.time,ms._id)"><img id="name_{{$index}}" src="{{$state[ms._id]}}"></div>-->
+    <!--</div>-->
+    <!--</a>-->
+
+<div class="remind_list remind_list_t">
+    <a href="#/alertedit/{{number}}"><div class="add" ><span class="iconfont">&#xe61f;</span><i>{{'addNewDrug' | translate}}</i></div></a>
+
+</div>
+<audio id="yyMusic" src="" controls="controls" hidden="true"></audio>
+
+<div class="nav_line"></div>
+
+
